@@ -22,7 +22,7 @@ install:
 
 script:
   - ng lint
-  - ng build --prod
+  - ng build --prod --aot --buildOptimizer
   - sonar-scanner
 
 deploy:
