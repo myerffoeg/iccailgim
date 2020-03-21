@@ -8,7 +8,6 @@ node_js:
   - "10"
 
 addons:
-  firefox: latest
   sonarcloud:
     organization: "myerffoeg"
     token:
