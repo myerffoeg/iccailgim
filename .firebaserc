@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "iccailgim": {
+      "hosting": {
+        "iccailgim": [
+          "iccailgim"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "iccailgim"
+  }
+}

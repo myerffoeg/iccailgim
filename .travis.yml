@@ -1,0 +1,35 @@
+language: node_js
+
+sudo: false
+
+dist: trusty
+
+node_js:
+  - "10"
+
+addons:
+  firefox: latest
+  sonarcloud:
+    organization: "myerffoeg"
+    token:
+      secure: "ATcuvqVCsaDMBnOZ3vFCkHT9BW8GJv2KE0JPTlFsEFlwOCayRTJ7GUZ/xAtIWNV3fA2JkWZYhEniczW4vfPSSmUR7uMscLkG6FfmreZvwF4CU4PoFFaE6gWiC/4455yNnRnNpdwZ4NRa6F89np+U08iMXz8Y/P/gjCXlQBUZ3/fzs1B7sPc51DptECNff37QchxCuyeuRliLQEKAQuqJVzYM6blPD+w2m/l9DeNR8L36TclIOY+uEXh4Oe8LcrQskm5mTEXBZGbJhYHz4AVQsd3y0dA5n4aC6AAF7eVeLtK93WPu8+0YuVF8fSSLovhSzQ4kPiUzvMi2ckgavgeHEcBDdq7oc8cT1NjBYWjLThKEWhaigfqILLgtzne/eJUZZKDl/dkCdq7MeDRbpSLQh+C9lYD906INrDgQ+7NZBFu/CPsQSniPje6tfNUab1PNK+jl/S8afF7nysJeT0vsyyMVcGiQHNSmONqgciaNK8JHv19CtT6OAbPuXnsNHieYK3rz9hB/naBlcP8EHIgeO7KFW31fwO8AbEBkidtJrp73ex1njlrvUhFQxG01uOPAGk3YLvEylt9jldNQgafPN0nhbD0Ksl5SWWAt5iDaVDO0IoW55PnLoA9f2tO5X6KZXDvqpHec5BOGzc3Yxei+ybVhr8YL4mXiokIDeoaxz5U="
+
+before_install:
+  - npm install -g npm@latest
+
+install:
+  - npm install
+
+script:
+  - ng lint
+  - ng build --prod
+  - sonar-scanner
+
+deploy:
+  provider: firebase
+  token:
+    secure: "nxZt3RUW0ZV+KcxvPeaUqycCd8cAKHuie0tDXlzLxJHspCSrCRhLNGmlenJ85XEIyf2KFUFtRK7fri7OPX9vS4iOCBMh9N6msEkZ+TGbhV5IhgfUSEz40dN11yz5C39oJa08p7XCROmpPaUdstufifxLohyAStMwPOAADm+OzW6eJROIjm7avMVSueLaLi6/TT3CVlAMnwJw6xKqj6R3DHrz1/1K8zKqWpfJafeyu/DauPdXzGbzFnAX8sU691ttViKLGE1ewyo1w1BBu00ETMm50BZlM4RSqDlZBMlRXoilHc2sndAHgwoaQ29JkoMIc5AU9seVuTZvwmnA2cpEDn7G5e1CSIBYN4H+owaFj0lr8Gz6fk330NH9KsDuGayMnsi9Fj1DrqITd50AeuQTK/CgMFzkFg4dOcOPHriGHbA8D7rJOdnntE6ufT+vch1sftQ9kb6EramgwDrVyzm7b/rzZOxoo3mreteg4rEqkoloSfXyH9F//ScYA2/s4uUw3O6tzYlAlQqwN+Fu3dY+BFvtkDzA+eKPpL3zESkN8OOIPX/HItkqoAeZStD5ZzQlFzGQ9nVkHVVkm09Il8/PJVE+Qhd6+XWKMsBXFpsXH+/JUnnfG551TahzBCbdKKRRwXG11wBnOFMOYpZn+Yz+PCssG62+0iIUs7AaEGKNrFk="
+  skip_cleanup: true
+
+git:
+  depth: 1
