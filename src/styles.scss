@@ -2,27 +2,27 @@
 
 @include mat-core();
 
-$dark-primary: mat-palette(
+$light-primary: mat-palette(
   (
-    50: #fffdfd,
-    100: #f8b9b8,
-    200: #f38885,
-    300: #ec4844,
-    400: #ea2d28,
-    500: #dd1b16,
-    600: #c11813,
-    700: #a51410,
-    800: #89110e,
-    900: #6e0d0b,
-    A100: #fff3f3,
-    A200: #ff908d,
-    A400: #fc302a,
-    A700: #ef231d,
+    50: #f6fafe,
+    100: #b2d4f6,
+    200: #80b8f0,
+    300: #4095e8,
+    400: #2585e5,
+    500: #1976d2,
+    600: #1667b7,
+    700: #12579b,
+    800: #0f4880,
+    900: #0c3965,
+    A100: #ebf5ff,
+    A200: #85c2ff,
+    A400: #2690f8,
+    A700: #1a83eb,
     contrast: (
       50: #000000,
       100: #000000,
       200: #000000,
-      300: #ffffff,
+      300: #000000,
       400: #ffffff,
       500: #ffffff,
       600: #ffffff,
@@ -32,47 +32,47 @@ $dark-primary: mat-palette(
       A100: #000000,
       A200: #000000,
       A400: #ffffff,
-      A700: #ffffff
-    )
+      A700: #ffffff,
+    ),
   )
 );
-$dark-accent: mat-palette(
+$light-accent: mat-palette(
   (
-    50: #e8eaf6,
-    100: #c5cae9,
-    200: #9fa8da,
-    300: #7986cb,
-    400: #5c6bc0,
-    500: #3f51b5,
-    600: #3949ab,
-    700: #303f9f,
-    800: #283593,
-    900: #1a237e,
-    A100: #8c9eff,
-    A200: #536dfe,
-    A400: #3d5afe,
-    A700: #304ffe,
+    50: #ffffff,
+    100: #fffdfd,
+    200: #facac9,
+    300: #f48a88,
+    400: #f26f6c,
+    500: #ef5350,
+    600: #ec3734,
+    700: #ea1c18,
+    800: #d01713,
+    900: #b41410,
+    A100: #ffffff,
+    A200: #ffdad9,
+    A400: #fe7774,
+    A700: #f56663,
     contrast: (
       50: #000000,
       100: #000000,
       200: #000000,
-      300: #ffffff,
-      400: #ffffff,
-      500: #ffffff,
+      300: #000000,
+      400: #000000,
+      500: #000000,
       600: #ffffff,
       700: #ffffff,
       800: #ffffff,
       900: #ffffff,
       A100: #000000,
-      A200: #ffffff,
-      A400: #ffffff,
-      A700: #ffffff
-    )
+      A200: #000000,
+      A400: #000000,
+      A700: #000000,
+    ),
   )
 );
-$dark-theme: mat-dark-theme($dark-primary, $dark-accent);
+$light-theme: mat-light-theme($light-primary, $light-accent);
 
-@include angular-material-theme($dark-theme);
+@include angular-material-theme($light-theme);
 
 html,
 body {
