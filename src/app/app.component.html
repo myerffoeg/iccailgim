@@ -1,22 +1,49 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport>
-    <mat-nav-list>
-      <a mat-list-item (click)="drawer.toggle()" href="#">
-        <mat-icon aria-label="Side nav toggle icon">close</mat-icon>
-      </a>
-      <a mat-list-item href="#" [routerLink]="['/']" routerLinkActive="active">
-        <mat-icon aria-label="Side nav toggle icon">home</mat-icon>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button type="button" aria-label="Toggle sidenav" [hidden]="drawer.opened" mat-icon-button
-        (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      <button type="button" aria-label="Home" mat-icon-button routerLink="/">
+        <mat-icon aria-label="Home navigation icon">home</mat-icon>
       </button>
-      <span></span>
+      <button type="button" aria-label="Works" mat-icon-button routerLink="/projects">
+        <mat-icon aria-label="Work navigation icon">work</mat-icon>
+      </button>
+      <span class="spacer"></span>
+      <ng-container *ngIf="authenticationService.user$ | async; then authenticated else guest"> </ng-container>
+      <ng-template #guest>
+        <button type="button" aria-label="Login" mat-icon-button (click)="authenticationService.googleSignin()">
+          <mat-icon aria-label="Login">exit_to_app</mat-icon>
+        </button>
+      </ng-template>
+      <ng-template #authenticated>
+        <ng-container *ngIf="authenticationService.user$ | async as user">
+          <button type="button" aria-label="User menu" mat-icon-button [matMenuTriggerFor]="menu">
+            <ng-container *ngIf="user.photoURL; then userPhoto else noPhoto"></ng-container>
+            <ng-template #userPhoto>
+              <img class="profile" [src]="user.photoURL" aria-label="User photo">
+            </ng-template>
+            <ng-template #noPhoto>
+              <mat-icon aria-label="User menu icon">account_circle</mat-icon>
+            </ng-template>
+          </button>
+        </ng-container>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="authenticationService.signOut()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Sign out</span>
+          </button>
+        </mat-menu>
+        <!-- 
+        <div *ngIf="authenticationService.user$ | async as user">
+          <h3>Howdy, {{ user.displayName }}</h3>
+          <img [src]="user.photoURL">
+          <p>UID: {{ user.uid }}</p>
+          <button (click)="authenticationService.signOut()">Logout</button>
+        </div> -->
+      </ng-template>
+
     </mat-toolbar>
-    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<main>
+  <router-outlet></router-outlet>
+</main>
