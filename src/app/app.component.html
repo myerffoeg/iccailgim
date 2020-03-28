@@ -27,7 +27,7 @@
           </button>
         </ng-container>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="authenticationService.signOut()">
+          <button mat-menu-item aria-label="Sign out" (click)="authenticationService.signOut()">
             <mat-icon>exit_to_app</mat-icon>
             <span>Sign out</span>
           </button>
