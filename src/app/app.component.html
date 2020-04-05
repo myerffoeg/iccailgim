@@ -8,14 +8,14 @@
         <mat-icon aria-label="Work navigation icon">work</mat-icon>
       </button>
       <span class="spacer"></span>
-      <ng-container *ngIf="authenticationService.user$ | async; then authenticated else guest"> </ng-container>
+      <ng-container *ngIf="authService.user$ | async; then authenticated else guest"> </ng-container>
       <ng-template #guest>
-        <button type="button" aria-label="Login" mat-icon-button (click)="authenticationService.googleSignin()">
+        <button type="button" aria-label="Login" mat-icon-button (click)="authService.googleSignin()">
           <mat-icon aria-label="Login">exit_to_app</mat-icon>
         </button>
       </ng-template>
       <ng-template #authenticated>
-        <ng-container *ngIf="authenticationService.user$ | async as user">
+        <ng-container *ngIf="authService.user$ | async as user">
           <button type="button" aria-label="User menu" mat-icon-button [matMenuTriggerFor]="menu">
             <ng-container *ngIf="user.photoURL; then userPhoto else noPhoto"></ng-container>
             <ng-template #userPhoto>
@@ -27,7 +27,7 @@
           </button>
         </ng-container>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item aria-label="Sign out" (click)="authenticationService.signOut()">
+          <button mat-menu-item aria-label="Sign out" (click)="authService.signOut()">
             <mat-icon>exit_to_app</mat-icon>
             <span>Sign out</span>
           </button>

@@ -6,8 +6,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
 import 'firebase/firestore';
 import { environment } from 'src/environments/environment';
-import { AuthenticationService } from './services/authentication.service';
-
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [],
@@ -33,7 +32,7 @@ export class CoreModule {
         AngularFireAnalyticsModule,
         ScreenTrackingService,
 
-        AuthenticationService
+        AuthService
       ],
     } as ModuleWithProviders;
   }

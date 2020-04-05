@@ -24,7 +24,7 @@ interface AppUser {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
+export class AuthService {
 
   user$: Observable<AppUser>;
 
