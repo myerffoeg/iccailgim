@@ -12,7 +12,7 @@ import {
   UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, take, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
@@ -23,9 +23,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   constructor(private auth: AuthService, private router: Router) { }
 
   isAuthenticated(): Observable<boolean> {
-    return this.auth.user$.pipe(
-      take(1),
-      map(user => !!user),
+    return this.auth.isAuthenticathed().pipe(
       tap(loggedIn => {
         if (!loggedIn) {
           this.router.navigate(['/']);
@@ -51,7 +49,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.isAuthenticated();
+    return true;
   }
 
   canLoad(

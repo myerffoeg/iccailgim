@@ -4,7 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { auth, User } from 'firebase/app';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, take, map } from 'rxjs/operators';
 
 export enum AppUserRole {
   guest = 'guest',
@@ -58,5 +58,12 @@ export class AuthService {
   async signOut() {
     await this.afAuth.signOut();
     this.router.navigate(['/']);
+  }
+
+  isAuthenticathed(): Observable<boolean> {
+    return this.user$.pipe(
+      take(1),
+      map(user => !!user)
+    );
   }
 }

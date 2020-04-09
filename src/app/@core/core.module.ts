@@ -6,7 +6,24 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
 import 'firebase/firestore';
 import { environment } from 'src/environments/environment';
-import { AuthService } from './services/auth.service';
+import { AuthGuard, RoleGuard } from './guards';
+import { AuthService, RoleService } from './services';
+
+const FIREBASE = [
+  AngularFirestoreModule,
+  AngularFireAnalyticsModule,
+  ScreenTrackingService
+];
+
+const SERVICES = [
+  AuthService,
+  RoleService
+];
+
+const GUARDS = [
+  AuthGuard,
+  RoleGuard
+];
 
 @NgModule({
   declarations: [],
@@ -27,12 +44,10 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        AngularFirestoreModule,
-        AngularFirestoreModule,
-        AngularFireAnalyticsModule,
-        ScreenTrackingService,
+        ...FIREBASE,
 
-        AuthService
+        ...SERVICES,
+        ...GUARDS
       ],
     } as ModuleWithProviders;
   }

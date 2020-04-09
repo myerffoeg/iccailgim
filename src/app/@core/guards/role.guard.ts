@@ -12,22 +12,21 @@ import {
   UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, take, tap } from 'rxjs/operators';
-import { AuthService, AppUserRole } from '../services/auth.service';
+import { tap } from 'rxjs/operators';
+import { AppUserRole } from '../services/auth.service';
+import { RoleService } from '../services/role.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoleGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(private roleService: RoleService, private router: Router) { }
 
-  hasRole(roles: AppUserRole[]): Observable<boolean> {
-    return this.auth.user$.pipe(
-      take(1),
-      map(user => user.roles.some(role => roles.includes(role))),
-      tap(hasRole => {
-        if (!hasRole) {
+  hasSomeRoles(roles: AppUserRole[]): Observable<boolean> {
+    return this.roleService.hasSomeRoles(roles).pipe(
+      tap(hasSomeRoles => {
+        if (!hasSomeRoles) {
           this.router.navigate(['/']);
         }
       })
@@ -37,15 +36,15 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const roles = next.data.roles;
-    return !roles || this.hasRole(roles);
+    const roles = next?.data?.roles;
+    return !roles || this.hasSomeRoles(roles);
   }
 
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const roles = next.data.roles;
-    return !roles || this.hasRole(roles);
+    const roles = next?.data?.roles;
+    return !roles || this.hasSomeRoles(roles);
   }
 
   canDeactivate(
@@ -53,14 +52,13 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const roles = currentRoute.data.roles;
-    return !roles || this.hasRole(roles);
+    return true;
   }
 
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    const roles = route.data.roles;
-    return !roles || this.hasRole(roles);
+    const roles = route?.data?.roles;
+    return !roles || this.hasSomeRoles(roles);
   }
 }
