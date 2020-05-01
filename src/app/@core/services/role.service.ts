@@ -12,7 +12,6 @@ export class RoleService {
 
   hasSomeRoles(roles: AppUserRole[]): Observable<boolean> {
     return this.authService.user$.pipe(
-      take(1),
       map(user => user?.roles?.some(role => roles?.includes(role)))
     );
   }

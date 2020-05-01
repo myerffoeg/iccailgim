@@ -4,14 +4,14 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { auth, User } from 'firebase/app';
 import { Observable, of } from 'rxjs';
-import { switchMap, take, map } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 export enum AppUserRole {
   guest = 'guest',
   admin = 'admin'
 }
 
-interface AppUser {
+export interface AppUser {
   roles: AppUserRole[];
   displayName: string | null;
   email: string | null;
@@ -38,11 +38,6 @@ export class AuthService {
     );
   }
 
-  async googleSignin() {
-    const credential = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
-    return this.updateUserData(credential.user);
-  }
-
   private updateUserData(user: User): Promise<void> {
     return this.afs.doc(`users/${user.uid}`).set({
       roles: [AppUserRole.guest],
@@ -55,6 +50,11 @@ export class AuthService {
     }, { merge: true });
   }
 
+  async googleSignin() {
+    const credential = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
+    return this.updateUserData(credential.user);
+  }
+
   async signOut() {
     await this.afAuth.signOut();
     this.router.navigate(['/']);
@@ -62,7 +62,6 @@ export class AuthService {
 
   isAuthenticathed(): Observable<boolean> {
     return this.user$.pipe(
-      take(1),
       map(user => !!user)
     );
   }
