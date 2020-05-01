@@ -20,10 +20,6 @@ const routes: Routes = [
       AuthGuard,
       RoleGuard
     ],
-    canDeactivate: [
-      AuthGuard,
-      RoleGuard
-    ],
     canLoad: [
       AuthGuard,
       RoleGuard

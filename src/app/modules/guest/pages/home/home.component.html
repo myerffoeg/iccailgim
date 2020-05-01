@@ -1,14 +1,19 @@
-<main fxLayout="column" fxLayoutAlign="center center">
+<header fxLayout="column" fxLayoutAlign="center center">
     <h1>GEOFFREY MIGLIACCI</h1>
-    <h2>FULL STACK DEVELOPER</h2>
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <button routerLink="profile" mat-icon-button color="accent" matTooltipShowDelay="200" matTooltipHideDelay="200"
-            matTooltip="Profil" aria-label="Navigation vers mes projets">
-            <mat-icon>description</mat-icon>
-        </button>
-        <button routerLink="projects" mat-icon-button color="accent" matTooltipShowDelay="200" matTooltipHideDelay="200"
-            matTooltip="Projets" aria-label="Navigation vers mes projets">
-            <mat-icon>work</mat-icon>
-        </button>
-    </div>
-</main>
+    <h2>DÉVELOPPEUR FULL STACK</h2>
+    <nav fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="row" fxLayoutAlign="center center" class="button-container">
+            <button mat-fab routerLink="profile" color="primary" aria-label="Navigation vers mon profil"
+                matTooltipShowDelay="200" matTooltipHideDelay="200" matTooltip="Profil">
+                <mat-icon>description</mat-icon>
+            </button>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center" class="button-container">
+            <button mat-fab routerLink="projects" color="primary" aria-label="Navigation vers mes projets"
+                matTooltipShowDelay="200" matTooltipHideDelay="200" matTooltip="Projets"
+                aaria-label="Navigation vers mes projets">
+                <mat-icon>work</mat-icon>
+            </button>
+        </div>
+    </nav>
+</header>

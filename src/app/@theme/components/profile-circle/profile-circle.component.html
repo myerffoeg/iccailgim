@@ -1,0 +1,15 @@
+<ng-container *ngIf="authService.user$ | async; then authenticated else guest"></ng-container>
+
+<ng-container #authenticated>
+    <div *ngIf="authService.user$ | async as user">
+        <img class="profile" [width]="size" [height]="size" [src]="user.photoURL" [alt]="user.displayName"
+            (click)="authService.signOut()">
+    </div>
+</ng-container>
+
+<ng-template #guest>
+    <button routerLink="projects" mat-icon-button color="accent" aria-label="Connexion Google"
+        (click)="authService.googleSignin()">
+        <mat-icon>face</mat-icon>
+    </button>
+</ng-template>

@@ -19,7 +19,7 @@ import { RoleService } from '../services/role.service';
 @Injectable({
   providedIn: 'root'
 })
-export class RoleGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
+export class RoleGuard implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(private roleService: RoleService, private router: Router) { }
 
@@ -45,14 +45,6 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanDeactivate<u
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const roles = next?.data?.roles;
     return !roles || this.hasSomeRoles(roles);
-  }
-
-  canDeactivate(
-    component: unknown,
-    currentRoute: ActivatedRouteSnapshot,
-    currentState: RouterStateSnapshot,
-    nextState?: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
   }
 
   canLoad(

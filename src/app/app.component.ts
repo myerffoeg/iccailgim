@@ -20,7 +20,7 @@ import { RouterOutlet } from '@angular/router';
           }),
         ], { optional: true }),
         query(':enter', [
-          animate('1.25s ease', style({
+          animate('1.5s ease', style({
             opacity: 1,
             overflow: 'auto'
           }

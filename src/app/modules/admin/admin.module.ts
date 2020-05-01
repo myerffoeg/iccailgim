@@ -9,7 +9,6 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    FlexLayoutModule,
     AdminRoutingModule,
     ThemeModule
   ]

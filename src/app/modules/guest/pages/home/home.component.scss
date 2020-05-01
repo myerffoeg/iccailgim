@@ -1,16 +1,14 @@
 :host {
-    height: 100vh;
-
-    main {
+    header {
         height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/images/forest.jpg) no-repeat center center fixed;
+        background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(/assets/images/forest.jpg) no-repeat center center fixed;
         background-size: cover;
 
         h1 {
             font-family: 'Montserrat', Helvetica, sans-serif;
             text-align: center;
             text-transform: uppercase;
-            font-weight: 900;
+            font-weight: 200;
             font-size: 7vw;
             line-height: 7vw;
             color: #fff;
@@ -20,10 +18,18 @@
             font-family: 'Montserrat', Helvetica, sans-serif;
             text-align: center;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 100;
             font-size: 5vw;
             line-height: 5vw;
             color: #fff;
+        }
+
+        nav {
+            margin-top: 48px;
+
+            .button-container {
+                width: 120px;
+            }
         }
     }
 }
