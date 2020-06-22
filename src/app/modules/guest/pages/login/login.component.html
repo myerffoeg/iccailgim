@@ -1,5 +1,5 @@
 <main fxLayout="column" fxLayoutAlign="center center">
-    <ng-container *ngIf="!(authService.user$ | async)">
+    <ng-container *ngIf="(authService.user$ | async) !== null">
         <app-google-login-btn></app-google-login-btn>
     </ng-container>
 </main>

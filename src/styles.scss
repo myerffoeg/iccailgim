@@ -81,17 +81,17 @@ $light-theme: mat-light-theme($light-primary, $light-accent);
 
 html,
 body {
+  margin: 0;
   height: 100vh;
 }
 
 body {
-  margin: 0;
   font-family: 'Montserrat', Helvetica, sans-serif !important;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {

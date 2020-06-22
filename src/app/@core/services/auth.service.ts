@@ -50,12 +50,12 @@ export class AuthService {
     }, { merge: true });
   }
 
-  async googleSignin() {
+  async googleSignin(): Promise<void> {
     const credential = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
     return this.updateUserData(credential.user);
   }
 
-  async signOut() {
+  async signOut(): Promise<void> {
     await this.afAuth.signOut();
     this.router.navigate(['/']);
   }

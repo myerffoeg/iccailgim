@@ -16,10 +16,6 @@ const routes: Routes = [
       AuthGuard,
       RoleGuard
     ],
-    canActivateChild: [
-      AuthGuard,
-      RoleGuard
-    ],
     canLoad: [
       AuthGuard,
       RoleGuard
