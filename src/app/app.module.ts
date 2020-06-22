@@ -1,3 +1,4 @@
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +18,7 @@ import { AppComponent } from './app.component';
     CoreModule.forRoot()
   ],
   providers: [
-
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
   bootstrap: [
     AppComponent
