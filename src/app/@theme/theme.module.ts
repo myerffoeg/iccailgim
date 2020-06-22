@@ -41,10 +41,12 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { GoogleLoginBtnComponent } from './components/google-login-btn/google-login-btn.component';
 import { ProfileCircleComponent } from './components/profile-circle/profile-circle.component';
 
 const COMPONENTS = [
-  ProfileCircleComponent
+  ProfileCircleComponent,
+  GoogleLoginBtnComponent
 ];
 
 const MODULES = [
@@ -96,8 +98,7 @@ const MODULES = [
 
 @NgModule({
   declarations: [
-    ...COMPONENTS,
-    ProfileCircleComponent
+    ...COMPONENTS
   ],
   imports: [
     ...MODULES

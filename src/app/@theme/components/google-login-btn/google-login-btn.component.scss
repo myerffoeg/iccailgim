@@ -1,0 +1,36 @@
+.google-sign-in-btn {
+    display: flex;
+    align-items: center;
+    background-color: #4285f4;
+    height: 64px;
+    width: 224px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    .google-logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        width: 64px;
+        height: 64px;
+        .google-logo {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    .google-sign-in {
+        color: #fff;
+        margin-left: 24px;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        box-shadow: 0 0 16px #4285f4;
+        transition: all 0.5s ease;
+    }
+}

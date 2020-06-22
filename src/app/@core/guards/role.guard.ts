@@ -25,21 +25,21 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanLoad {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const roles = next?.data?.roles;
+    const roles: AppUserRole[] = next?.data?.roles;
     return !roles || this.hasSomeRoles(roles);
   }
 
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const roles = next?.data?.roles;
+    const roles: AppUserRole[] = next?.data?.roles;
     return !roles || this.hasSomeRoles(roles);
   }
 
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    const roles = route?.data?.roles;
+    const roles: AppUserRole[] = route?.data?.roles;
     return !roles || this.hasSomeRoles(roles);
   }
 }

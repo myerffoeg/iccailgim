@@ -6,10 +6,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
 import 'firebase/firestore';
 import { environment } from 'src/environments/environment';
-import { HasRoleDirective } from './directives/has-role.directive';
 import { AuthGuard, RoleGuard } from './guards';
 import { AuthService, RoleService } from './services';
-import { IsLoggedDirective } from './directives/is-logged.directive';
 
 const FIREBASE = [
   AngularFirestoreModule,
