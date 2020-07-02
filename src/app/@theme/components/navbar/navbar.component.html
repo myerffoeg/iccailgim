@@ -1,5 +1,8 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
+        <button routerLink="/" mat-icon-button aria-label="Retour sur la page principale">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
         <span class="spacer"></span>
         <ng-container *appIsAuth="false">
             <app-login-btn></app-login-btn>

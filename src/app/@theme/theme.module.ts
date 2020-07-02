@@ -41,15 +41,20 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { LoginBtnComponent } from './components/login-btn/login-btn.component';
-import { ProfileCircleComponent } from './components/profile-circle/profile-circle.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 import { IsAuthDirective } from '../@core/directives/is-auth.directive';
+import { LoginBtnComponent } from './components/login-btn/login-btn.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProfileCircleComponent } from './components/profile-circle/profile-circle.component';
 
 const COMPONENTS = [
   NavbarComponent,
   ProfileCircleComponent,
   LoginBtnComponent
+];
+
+const DIRECTIVES = [
+  IsAuthDirective
 ];
 
 const MODULES = [
@@ -96,16 +101,18 @@ const MODULES = [
   MatToolbarModule,
   MatTooltipModule,
   PortalModule,
-  ScrollingModule
+  ScrollingModule,
+
+  RouterModule
 ];
 
 @NgModule({
   declarations: [
     ...COMPONENTS,
-    IsAuthDirective
+    ...DIRECTIVES
   ],
   imports: [
-    ...MODULES
+    ...MODULES,
   ],
   exports: [
     ...MODULES,
