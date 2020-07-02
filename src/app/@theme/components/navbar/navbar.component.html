@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="spacer"></span>
+        <ng-container *appIsAuth="false">
+            <app-login-btn></app-login-btn>
+        </ng-container>
+        <ng-container *appIsAuth>
+            <app-profile-circle size="40"></app-profile-circle>
+        </ng-container>
+    </mat-toolbar-row>
+</mat-toolbar>

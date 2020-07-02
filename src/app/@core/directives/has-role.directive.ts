@@ -1,6 +1,6 @@
-import { Directive, ViewContainerRef, TemplateRef, OnInit, OnDestroy } from '@angular/core';
-import { RoleService, AppUserRole } from '../services';
+import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AppUserRole, RoleService } from '../services';
 
 @Directive({
   selector: '[appHasRole]'
@@ -9,7 +9,8 @@ export class HasRoleDirective implements OnInit, OnDestroy {
 
   private subscription$: Subscription;
 
-  private roles: AppUserRole[] = [];
+  @Input()
+  private hasRole: AppUserRole[] = [];
 
   constructor(
     public templateRef: TemplateRef<any>,
@@ -18,7 +19,7 @@ export class HasRoleDirective implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.subscription$ = this.roleService.hasSomeRoles(this.roles).subscribe(hasRole => {
+    this.subscription$ = this.roleService.hasSomeRoles(this.hasRole).subscribe(hasRole => {
       if (hasRole) {
         this.viewContainer.createEmbeddedView(this.templateRef);
       } else {

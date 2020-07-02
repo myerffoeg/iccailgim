@@ -1,13 +1,16 @@
-import { Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../services';
 
 @Directive({
-  selector: '[appIsLogged]'
+  selector: '[appIsAuth]'
 })
-export class IsLoggedDirective implements OnInit, OnDestroy {
+export class IsAuthDirective implements OnInit, OnDestroy {
 
   private subscription$: Subscription;
+
+  @Input()
+  private appIsAuth = true;
 
   constructor(
     public templateRef: TemplateRef<any>,
@@ -17,7 +20,7 @@ export class IsLoggedDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription$ = this.authService.isAuthenticathed().subscribe(loggedIn => {
-      if (loggedIn) {
+      if (loggedIn === this.appIsAuth) {
         this.viewContainer.createEmbeddedView(this.templateRef);
       } else {
         this.viewContainer.clear();

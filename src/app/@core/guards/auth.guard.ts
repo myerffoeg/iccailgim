@@ -13,9 +13,9 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   isAuthenticated(notAuthenticathed: boolean = false): Observable<boolean> {
     return this.auth.isAuthenticathed().pipe(
-      map(loggedIn => !(notAuthenticathed === loggedIn)),
-      tap(loggedIn => {
-        if (!loggedIn) {
+      map(auth => !(notAuthenticathed === auth)),
+      tap(auth => {
+        if (!auth) {
           this.router.navigate(['/']);
         }
       })

@@ -41,12 +41,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { GoogleLoginBtnComponent } from './components/google-login-btn/google-login-btn.component';
+import { LoginBtnComponent } from './components/login-btn/login-btn.component';
 import { ProfileCircleComponent } from './components/profile-circle/profile-circle.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { IsAuthDirective } from '../@core/directives/is-auth.directive';
 
 const COMPONENTS = [
+  NavbarComponent,
   ProfileCircleComponent,
-  GoogleLoginBtnComponent
+  LoginBtnComponent
 ];
 
 const MODULES = [
@@ -98,7 +101,8 @@ const MODULES = [
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    IsAuthDirective
   ],
   imports: [
     ...MODULES

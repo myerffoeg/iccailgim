@@ -1,5 +1,11 @@
 :host {
-    section {
-        height: 100vh;
+    main {
+        height: calc(100vh - 64px);
+    }
+
+    @media (max-width: 600px) {
+        main {
+            height: calc(100vh - 56px);
+        }
     }
 }
