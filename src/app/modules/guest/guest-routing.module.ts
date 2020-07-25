@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/@core/guards';
-import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
+import { ProjectsComponent, HomeComponent, ProfileComponent } from './pages';
 
 const routes: Routes = [
   {
@@ -24,6 +21,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule]
+  exports: [
+    RouterModule
+  ]
 })
 export class GuestRoutingModule { }

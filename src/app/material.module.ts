@@ -42,20 +42,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
-import { IsAuthDirective } from '../@core/directives/is-auth.directive';
-import { LoginBtnComponent } from './components/login-btn/login-btn.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { ProfileCircleComponent } from './components/profile-circle/profile-circle.component';
-
-const COMPONENTS = [
-  NavbarComponent,
-  ProfileCircleComponent,
-  LoginBtnComponent
-];
-
-const DIRECTIVES = [
-  IsAuthDirective
-];
 
 const MODULES = [
   CommonModule,
@@ -107,16 +93,11 @@ const MODULES = [
 ];
 
 @NgModule({
-  declarations: [
-    ...COMPONENTS,
-    ...DIRECTIVES
-  ],
   imports: [
     ...MODULES,
   ],
   exports: [
-    ...MODULES,
-    ...COMPONENTS
+    ...MODULES
   ]
 })
-export class ThemeModule { }
+export class MaterialModule { }

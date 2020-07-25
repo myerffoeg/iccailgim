@@ -1,21 +1,30 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ThemeModule } from 'src/app/@theme/theme.module';
+import { MaterialModule } from 'src/app/material.module';
 import { GuestRoutingModule } from './guest-routing.module';
-import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
+import { SharedModule } from 'src/app/@shared/shared.module';
+import { HomeComponent, ProjectsComponent, ProfileComponent } from './pages';
+
+const PAGES = [
+  HomeComponent,
+  ProjectsComponent,
+  ProfileComponent
+];
+
+const COMPONENTS = [
+
+];
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    ProjectsComponent,
-    ProfileComponent
+    ...PAGES,
+    ...COMPONENTS
   ],
   imports: [
     CommonModule,
     GuestRoutingModule,
-    ThemeModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class GuestModule { }

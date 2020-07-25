@@ -1,6 +1,6 @@
 import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AppUserRole, RoleService } from '../services';
+import { AppUserRole, RoleService } from 'src/app/@core/services';
 
 @Directive({
   selector: '[appHasRole]'

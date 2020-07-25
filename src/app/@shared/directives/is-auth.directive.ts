@@ -1,6 +1,6 @@
 import { Directive, Input, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../services';
+import { AuthService } from 'src/app/@core/services';
 
 @Directive({
   selector: '[appIsAuth]'
