@@ -1,3 +1,37 @@
-<div [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
-</div>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport role="navigation" mode="over">
+        <mat-toolbar (click)="drawer.close()">
+            <img src="./favicon.svg" height="32">
+        </mat-toolbar>
+        <mat-nav-list (click)="drawer.close()">
+            <a mat-list-item fxLayoutAlign="center center" routerLink="/">
+                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">home</mat-icon>
+            </a>
+            <a mat-list-item fxLayoutAlign="center center" routerLink="/profile">
+                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">
+                    description
+                </mat-icon>
+            </a>
+            <a mat-list-item fxLayoutAlign="center center" routerLink="/projects">
+                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">work</mat-icon>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fullScreen>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <span class="spacer"></span>
+            <ng-container *appIsAuth="false">
+                <app-login-btn></app-login-btn>
+            </ng-container>
+            <ng-container *appIsAuth>
+                <app-profile-circle size="40"></app-profile-circle>
+            </ng-container>
+        </mat-toolbar>
+        <main [@routeAnimations]="prepareRoute(outlet)">
+            <router-outlet #outlet="outlet"></router-outlet>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

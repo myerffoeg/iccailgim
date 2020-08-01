@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/@shared/shared.module';
 import { MaterialModule } from 'src/app/material.module';
 import { GuestRoutingModule } from './guest-routing.module';
-import { SharedModule } from 'src/app/@shared/shared.module';
-import { HomeComponent, ProjectsComponent, ProfileComponent } from './pages';
+import { HomeComponent, ProfileComponent, ProjectsComponent } from './pages';
 
 const PAGES = [
   HomeComponent,
