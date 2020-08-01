@@ -10,7 +10,7 @@ export class HasRoleDirective implements OnInit, OnDestroy {
   private subscription$: Subscription;
 
   @Input()
-  private hasRole: AppUserRole[] = [];
+  private appHasRole: AppUserRole[] = [];
 
   constructor(
     public templateRef: TemplateRef<any>,
@@ -19,7 +19,7 @@ export class HasRoleDirective implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.subscription$ = this.roleService.hasSomeRoles(this.hasRole).subscribe(hasRole => {
+    this.subscription$ = this.roleService.hasSomeRoles(this.appHasRole).subscribe(hasRole => {
       if (hasRole) {
         this.viewContainer.createEmbeddedView(this.templateRef);
       } else {

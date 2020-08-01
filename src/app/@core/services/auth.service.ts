@@ -38,21 +38,25 @@ export class AuthService {
     );
   }
 
-  private updateUserData(user: User): Promise<void> {
-    return this.afs.doc(`users/${user.uid}`).set({
-      roles: [AppUserRole.guest],
-      displayName: user.displayName,
-      email: user.email,
-      phoneNumber: user.phoneNumber,
-      photoURL: user.photoURL,
-      providerId: user.providerId,
-      uid: user.uid,
-    }, { merge: true });
+  private updateUserData(user: User): void {
+    this.afs.doc(`users/${user.uid}`).get().subscribe((document) => {
+      if (!document.exists) {
+        this.afs.doc(`users/${user.uid}`).set({
+          roles: [AppUserRole.guest],
+          displayName: user.displayName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          providerId: user.providerId,
+          uid: user.uid,
+        }, { merge: true });
+      }
+    });
   }
 
   async googleSignin(): Promise<void> {
     const credential = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
-    return this.updateUserData(credential.user);
+    this.updateUserData(credential.user);
   }
 
   async signOut(): Promise<void> {

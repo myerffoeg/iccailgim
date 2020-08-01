@@ -11,12 +11,17 @@ export class RoleService {
   constructor(private authService: AuthService) { }
 
   hasSomeRoles(roles: AppUserRole[] = []): Observable<boolean> {
-    if (!roles.length) {
-      return of(true);
-    }
-
     return this.authService.user$.pipe(
-      map(user => user?.roles?.some(role => roles?.includes(role)))
+      map(user => {
+        if (!user) {
+          return false;
+        }
+
+        if (!roles.length) {
+          return true;
+        }
+        return user.roles.some(role => roles.includes(role));
+      })
     );
   }
 }
