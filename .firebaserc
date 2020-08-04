@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "default": "iccailgim"
+  },
   "targets": {
     "iccailgim": {
       "hosting": {
@@ -7,8 +10,5 @@
         ]
       }
     }
-  },
-  "projects": {
-    "default": "iccailgim"
   }
 }

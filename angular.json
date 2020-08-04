@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "iccailgim"
+  "defaultProject": "iccailgim",
+  "cli": {
+    "analytics": "c51a077b-3f87-475f-8fb6-e6ad71f97774"
+  }
 }

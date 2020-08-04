@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProfileCircleComponent } from './profile-circle.component';
 
 describe('ProfileCircleComponent', () => {
@@ -8,9 +7,8 @@ describe('ProfileCircleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileCircleComponent ]
-    })
-    .compileComponents();
+      declarations: [ProfileCircleComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

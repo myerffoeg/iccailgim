@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LoginBtnComponent } from './login-btn.component';
 
 describe('LoginBtnComponent', () => {
@@ -8,9 +7,8 @@ describe('LoginBtnComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginBtnComponent ]
-    })
-    .compileComponents();
+      declarations: [LoginBtnComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
