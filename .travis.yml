@@ -8,6 +8,11 @@ node_js:
   - "10"
 
 addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
   sonarcloud:
     organization: "myerffoeg"
     token:
@@ -21,6 +26,7 @@ install:
 
 script:
   - ng lint
+  - ng test --watch=false --code-coverage --no-progress --browsers=ChromeHeadlessNoSandbox
   - ng build --prod --aot --buildOptimizer
   - sonar-scanner
 
