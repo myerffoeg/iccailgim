@@ -1,8 +1,12 @@
-import { IsAuthDirective } from './is-auth.directive';
+import { TestBed } from '@angular/core/testing';
+import { HasRoleDirective } from './has-role.directive';
 
-describe('IsAuthDirective', () => {
-  it('should create an instance', () => {
-    const directive = new IsAuthDirective();
-    expect(directive).toBeTruthy();
+describe('HasRoleDirective', () => {
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [
+        HasRoleDirective
+      ]
+    });
   });
 });
