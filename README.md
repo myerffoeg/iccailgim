@@ -1,11 +1,13 @@
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ficcailgim.firebaseapp.com%2F)](https://iccailgim.firebaseapp.com/)
+
 ![Version](https://img.shields.io/github/package-json/v/myerffoeg/iccailgim?style=for-the-badge)
 [![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](LICENSE.md)
 
 [![SonarCloud](https://img.shields.io/sonar/quality_gate/myerffoeg_iccailgim?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/dashboard?id=myerffoeg_iccailgim)
 [![CI](https://img.shields.io/travis/com/myerffoeg/iccailgim?style=for-the-badge)](https://travis-ci.com/myerffoeg/iccailgim)
 
-[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ficcailgim.firebaseapp.com%2F)](https://iccailgim.firebaseapp.com/)
-
+[![Twitter Followers](https://img.shields.io/twitter/follow/myerffoeg.svg?logo=twitter&style=for-the-badge&label=Follow)](https://twitter.com/myerffoeg)
+[![Github Followers](https://img.shields.io/github/followers/myerffoeg?logo=github&style=for-the-badge)](https://github.com/myerffoeg)
 [![PayPal](https://img.shields.io/badge/Donate-PayPal-ff3f59.svg?style=for-the-badge)](https://www.paypal.me/myerffoeg)
 
 # Iccailgim
