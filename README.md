@@ -1,10 +1,13 @@
-![Version](https://img.shields.io/github/package-json/v/myerffoeg/iccailgim)
-[![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC--ND%204.0-lightgrey.svg)](LICENSE.md)
+![Version](https://img.shields.io/github/package-json/v/myerffoeg/iccailgim?style=for-the-badge)
+[![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](LICENSE.md)
 
-[![SonarCloud](https://sonarcloud.io/api/project_badges/measure?project=myerffoeg_iccailgim&metric=alert_status)](https://sonarcloud.io/dashboard?id=myerffoeg_iccailgim)
-[![TravisCI](https://img.shields.io/travis/com/myerffoeg/iccailgim/master)](https://travis-ci.com/myerffoeg/iccailgim)
-[![PayPal](https://img.shields.io/badge/Donate-PayPal-ff3f59.svg)](https://www.paypal.me/myerffoeg)
+[![SonarCloud](https://img.shields.io/sonar/quality_gate/myerffoeg_iccailgim?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/dashboard?id=myerffoeg_iccailgim)
+[![CI](https://img.shields.io/travis/com/myerffoeg/iccailgim?style=for-the-badge)](https://travis-ci.com/myerffoeg/iccailgim)
+
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ficcailgim.firebaseapp.com%2F)](https://iccailgim.firebaseapp.com/)
+
+[![PayPal](https://img.shields.io/badge/Donate-PayPal-ff3f59.svg?style=for-the-badge)](https://www.paypal.me/myerffoeg)
 
 # Iccailgim
 
-Iccailgim is a portfolio using Angular & Firebase.
+Welcome to the source code of my portfolio, it was done using Angular & Firebase to have a fast & reliable website. If you want, you can take a look at the source code to see what I have used & how I have done it!
