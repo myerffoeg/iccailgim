@@ -27,7 +27,7 @@ jobs:
       script:
         - ng lint
         - sonar-scanner
-    - stage: "Building & Firebase deployment"
+    - stage: "Building & deploying on Firebase"
       name: "Building & deploying on Firebase"
       script:
         - ng build --aot --prod --build-optimizer
