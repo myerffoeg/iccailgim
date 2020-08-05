@@ -20,11 +20,14 @@ before_install:
 install:
   - npm install
 
-script:
-  - ng lint
-  - ng test --watch=false --code-coverage --no-progress --browsers=ChromeHeadlessNoSandbox
-  - ng build --prod --aot --buildOptimizer
-  - sonar-scanner
+jobs:
+  include:
+    - stage: "ng lint"
+      name: "Linting project"
+      script: ng lint
+    - stage: "ng build"
+      name: "Building project"
+      script: ng build --aot --prod --build-optimizer
 
 deploy:
   provider: firebase

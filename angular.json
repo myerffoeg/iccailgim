@@ -91,7 +91,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "codeCoverageExclude": [
-              "src/app/**/*.module.ts"
+              "src/app/**/*.module.ts",
+              "src/app/**/*.spec.ts"
             ],
             "assets": [
               "src/favicon.svg",
