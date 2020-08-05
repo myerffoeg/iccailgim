@@ -22,15 +22,15 @@ install:
 
 jobs:
   include:
-    - stage: "ng lint & analysis"
-      name: "Linting project"
-      script: ng lint
-    - stage: "ng lint & analysis"
-      name: "Sonarcloud analysis"
-      script: sonar-scanner
-    - stage: "Building & deploying project"
-      name: "Building & deploying project"
-      script: ng build --aot --prod --build-optimizer
+    - stage: "Linting & Sonarcloud analysis"
+      name: "Linting & Sonarcloud analysis"
+      script:
+        - ng lint
+        - sonar-scanner
+    - stage: "Building & Firebase deployment"
+      name: "Building & deploying on Firebase"
+      script:
+        - ng build --aot --prod --build-optimizer
       deploy:
         provider: firebase
         token:
