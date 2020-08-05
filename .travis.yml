@@ -29,6 +29,7 @@ jobs:
         - sonar-scanner
     - stage: "Building & deploying on Firebase"
       name: "Building & deploying on Firebase"
+      if: branch = master
       script:
         - ng build --aot --prod --build-optimizer
       deploy:
