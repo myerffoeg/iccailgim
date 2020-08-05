@@ -25,15 +25,14 @@ jobs:
     - stage: "ng lint"
       name: "Linting project"
       script: ng lint
-    - stage: "ng build"
-      name: "Building project"
+    - stage: "Building & deploying project"
+      name: "Building & deploying project"
       script: ng build --aot --prod --build-optimizer
-
-deploy:
-  provider: firebase
-  token:
-    secure: "KfFYZIzdu6J7VikgFToCpDglVxjaVkYE1/vCaPrKIoXYa8yI62t3sV60j59VhkxX+1tlEB7InBbK7N7nax6FL6zurIBfYEx52PdiGGOIw2A8fN/ZEHWB4DSXvKWZh33/IfslOk23JoHquYpnTLRb5kFBwy4piJ4yvwXbENUvPwOKNTCxc6Twlbf3MhtyTjkEzYiCGmApc4N5vqfd2NE9qRv/vd3aJEntB65Yi8h1ei+Ol9mdT8HCpX4EsVUx2n0ivAaO8szxf0P6XdOiNrsLQIQJ4LngcL9ZkZFut60N68uF2DNltG6/Kv2PJjYBncueSS4g+NUqlqhqB/i90k5TCtRcNXw0Lk5lJi2B/VJQe+Ya3dpH3jGJfa9C3MtFSUgUOLuiL4kOdDfV6qvmXqDrHnL4+Fu+eSOBPKCLHn2zuZe+lTlft2LL+/IsXeubPm2fwquW0fLHVcujgWkMHIDfYCNiahCuOGSYsjJXIK58wJI5OynGLRJo4aOgjvz6b5Kb56CjiWYfa/0wja/DoDjqPbvVhxa0lqjr4jvxA51tODlKnFutgVLPMHeYsMXsDQfFvEGY/HSVwPsN4RVCE6XkFcLIiC0GOuYx5M5Var5vREawhTeJnxfjFeQ4CibtRYf3OdAHzpC96pmGq8t20l6uzFKAJfP8p6v+VMcA2HzfAr8="
-  skip_cleanup: true
+      deploy:
+        provider: firebase
+        token:
+          secure: "KfFYZIzdu6J7VikgFToCpDglVxjaVkYE1/vCaPrKIoXYa8yI62t3sV60j59VhkxX+1tlEB7InBbK7N7nax6FL6zurIBfYEx52PdiGGOIw2A8fN/ZEHWB4DSXvKWZh33/IfslOk23JoHquYpnTLRb5kFBwy4piJ4yvwXbENUvPwOKNTCxc6Twlbf3MhtyTjkEzYiCGmApc4N5vqfd2NE9qRv/vd3aJEntB65Yi8h1ei+Ol9mdT8HCpX4EsVUx2n0ivAaO8szxf0P6XdOiNrsLQIQJ4LngcL9ZkZFut60N68uF2DNltG6/Kv2PJjYBncueSS4g+NUqlqhqB/i90k5TCtRcNXw0Lk5lJi2B/VJQe+Ya3dpH3jGJfa9C3MtFSUgUOLuiL4kOdDfV6qvmXqDrHnL4+Fu+eSOBPKCLHn2zuZe+lTlft2LL+/IsXeubPm2fwquW0fLHVcujgWkMHIDfYCNiahCuOGSYsjJXIK58wJI5OynGLRJo4aOgjvz6b5Kb56CjiWYfa/0wja/DoDjqPbvVhxa0lqjr4jvxA51tODlKnFutgVLPMHeYsMXsDQfFvEGY/HSVwPsN4RVCE6XkFcLIiC0GOuYx5M5Var5vREawhTeJnxfjFeQ4CibtRYf3OdAHzpC96pmGq8t20l6uzFKAJfP8p6v+VMcA2HzfAr8="
+        skip_cleanup: true
 
 git:
   depth: 1
