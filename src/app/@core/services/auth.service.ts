@@ -30,18 +30,18 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
+    private afStore: AngularFirestore,
     private router: Router
   ) {
     this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => user ? this.afs.doc<AppUser>(`users/${user.uid}`).valueChanges() : of(null))
+      switchMap(user => user ? this.afStore.doc<AppUser>(`users/${user.uid}`).valueChanges() : of(null))
     );
   }
 
   private updateUserData(user: User): void {
-    this.afs.doc(`users/${user.uid}`).get().subscribe((document) => {
+    this.afStore.doc(`users/${user.uid}`).get().subscribe((document) => {
       if (!document.exists) {
-        this.afs.doc(`users/${user.uid}`).set({
+        this.afStore.doc(`users/${user.uid}`).set({
           roles: [AppUserRole.guest],
           displayName: user.displayName,
           email: user.email,
@@ -54,7 +54,7 @@ export class AuthService {
     });
   }
 
-  async googleSignin(): Promise<void> {
+  async googleSignInWithPopup(): Promise<void> {
     const credential = await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
     this.updateUserData(credential.user);
   }

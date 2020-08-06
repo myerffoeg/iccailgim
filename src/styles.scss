@@ -82,10 +82,6 @@ $light-theme: mat-light-theme($light-primary, $light-accent);
 html,
 body {
   margin: 0;
-  height: 100vh;
-}
-
-body {
   font-family: 'Montserrat', Helvetica, sans-serif !important;
 }
 
@@ -100,10 +96,9 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #c3002f;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #c3002f;
+  &:hover {
+    background: #c3002f;
+  }
 }
 
 ::-moz-selection {

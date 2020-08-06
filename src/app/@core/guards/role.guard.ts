@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -10,12 +11,21 @@ import { RoleService } from '../services/role.service';
 })
 export class RoleGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private roleService: RoleService, private router: Router) { }
+  constructor(
+    private role: RoleService,
+    private router: Router,
+    private matSnackBar: MatSnackBar
+  ) { }
 
   hasSomeRoles(roles: AppUserRole[]): Observable<boolean> {
-    return this.roleService.hasSomeRoles(roles).pipe(
+    return this.role.hasSomeRoles(roles).pipe(
       tap(hasSomeRoles => {
         if (!hasSomeRoles) {
+          this.matSnackBar.open(`You miss the authorization to see this page.`, '', {
+            duration: 7500,
+            horizontalPosition: 'right',
+            verticalPosition: 'bottom',
+          });
           this.router.navigate(['/']);
         }
       })

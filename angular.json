@@ -25,8 +25,7 @@
             "aot": true,
             "assets": [
               "src/favicon.svg",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -60,9 +59,7 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ],
-              "serviceWorker": true,
-              "ngswConfigPath": "ngsw-config.json"
+              ]
             }
           }
         },
@@ -90,14 +87,9 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "codeCoverageExclude": [
-              "src/app/**/*.module.ts",
-              "src/app/**/*.spec.ts"
-            ],
             "assets": [
               "src/favicon.svg",
-              "src/assets",
-              "src/manifest.webmanifest"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -137,8 +129,5 @@
       }
     }
   },
-  "defaultProject": "iccailgim",
-  "cli": {
-    "analytics": "c51a077b-3f87-475f-8fb6-e6ad71f97774"
-  }
+  "defaultProject": "iccailgim"
 }

@@ -1,6 +1,6 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Data, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -29,10 +29,7 @@ import { RouterOutlet } from '@angular/router';
   ]
 })
 export class AppComponent {
-
-  constructor() { }
-
-  prepareRoute(outlet: RouterOutlet) {
+  prepareRoute(outlet: RouterOutlet): Data {
     return outlet?.activatedRouteData;
   }
 }

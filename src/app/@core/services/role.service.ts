@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AppUserRole, AuthService } from './auth.service';
 
@@ -8,7 +8,9 @@ import { AppUserRole, AuthService } from './auth.service';
 })
 export class RoleService {
 
-  constructor(private authService: AuthService) { }
+  constructor(
+    private authService: AuthService
+  ) { }
 
   hasSomeRoles(roles: AppUserRole[] = []): Observable<boolean> {
     return this.authService.user$.pipe(
