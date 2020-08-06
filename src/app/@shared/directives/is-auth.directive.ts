@@ -13,16 +13,16 @@ export class IsAuthDirective implements OnInit, OnDestroy {
   private appIsAuth = true;
 
   constructor(
-    public templateRef: TemplateRef<any>,
-    public viewContainer: ViewContainerRef,
-    public authService: AuthService
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
     this.subscription$ = this.authService.isAuthenticathed().subscribe(loggedIn => {
-      if (loggedIn === this.appIsAuth) {
+      if (loggedIn === this.appIsAuth && !this.viewContainer.length) {
         this.viewContainer.createEmbeddedView(this.templateRef);
-      } else {
+      } else if (!loggedIn) {
         this.viewContainer.clear();
       }
     });
