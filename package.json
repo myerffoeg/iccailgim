@@ -1,6 +1,14 @@
 {
   "name": "iccailgim",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Simple portfolio to manage all my projects.",
+  "homepage": "https://github.com/myerffoeg/iccailgim",
+  "license": "Creative Commons BY NC ND",
+  "author": {
+    "name": "Geoffrey Migliacci",
+    "email": "geoffrey.migliacci@gmail.com",
+    "url": "https://iccailgim.firebaseapp.com/"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
