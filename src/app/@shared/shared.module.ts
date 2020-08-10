@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LoginBtnComponent, ProfileCircleComponent } from './components';
-import { HasRoleDirective, IsAuthDirective } from './directives';
 import { MaterialModule } from '../material.module';
+import { HasRoleDirective, IsAuthDirective } from './directives';
 
 const COMPONENTS = [
-  LoginBtnComponent,
-  ProfileCircleComponent
+
 ];
 
 const DIRECTIVES = [

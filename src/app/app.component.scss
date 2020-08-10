@@ -1,9 +1,11 @@
 :host {
-    main {
-        height: calc(100vh - 64px);
+    mat-toolbar {
+        .spacer {
+            flex: 1 1 auto;
+        }
     }
 
-    .spacer {
-        flex: 1 1 auto;
+    main {
+        height: calc(100vh - 64px);
     }
 }

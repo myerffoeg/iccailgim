@@ -20,10 +20,14 @@ export class IsAuthDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription$ = this.authService.isAuthenticathed().subscribe(loggedIn => {
-      if (loggedIn === this.appIsAuth && !this.viewContainer.length) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-      } else if (!loggedIn) {
-        this.viewContainer.clear();
+      if (!this.viewContainer.length) {
+        if (loggedIn) {
+          this.viewContainer.createEmbeddedView(this.templateRef);
+        }
+      } else {
+        if (!loggedIn) {
+          this.viewContainer.clear();
+        }
       }
     });
   }

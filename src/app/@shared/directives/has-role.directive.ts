@@ -20,10 +20,14 @@ export class HasRoleDirective implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription$ = this.roleService.hasSomeRoles(this.appHasRole).subscribe(hasRole => {
-      if (hasRole && !this.viewContainer.length) {
-        this.viewContainer.createEmbeddedView(this.templateRef);
-      } else if (!hasRole) {
-        this.viewContainer.clear();
+      if (!this.viewContainer.length) {
+        if (hasRole) {
+          this.viewContainer.createEmbeddedView(this.templateRef);
+        }
+      } else {
+        if (!hasRole) {
+          this.viewContainer.clear();
+        }
       }
     });
   }

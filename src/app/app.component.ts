@@ -1,6 +1,7 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
+import { AuthService } from './@core/services';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,9 @@ import { Data, RouterOutlet } from '@angular/router';
   ]
 })
 export class AppComponent {
+
+  constructor(public auth: AuthService) { }
+
   prepareRoute(outlet: RouterOutlet): Data {
     return outlet?.activatedRouteData;
   }
