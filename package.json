@@ -59,7 +59,7 @@
     "@angular-devkit/architect": ">= 0.900 < 0.1100",
     "firebase-tools": "^8.9.2",
     "fuzzy": "^0.1.3",
-    "inquirer": "^6.2.2",
+    "inquirer": "^7.3.3",
     "inquirer-autocomplete-prompt": "^1.1.0",
     "open": "^7.2.0"
   }
