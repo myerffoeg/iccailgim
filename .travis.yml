@@ -26,7 +26,7 @@ jobs:
       name: "Linting & Tests & Sonarcloud analysis"
       script:
         - ng lint
-        - ng test --watch=false --browsers=ChromeHeadless --codeCoverage
+        # - ng test --watch=false --browsers=ChromeHeadless --codeCoverage
         - sonar-scanner
     - stage: "Building & deploying on Firebase"
       name: "Building & deploying on Firebase"

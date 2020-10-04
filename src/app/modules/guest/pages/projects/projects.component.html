@@ -1,3 +1,5 @@
-<mat-grid-list cols="3" rowHeight="2:1">
-
-</mat-grid-list>
+<div *ngFor="let project of projects | async">
+    <h3>project ID: {{ project.id }} </h3>
+    <p>name: {{ project.name }}</p>
+    <hr>
+</div>

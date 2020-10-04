@@ -1,51 +1,45 @@
-import { Action } from '@ngrx/store';
-import { Project } from './project.reducer';
+import { createAction, props, union } from '@ngrx/store';
+import { Project } from './project';
 
-export const CREATE = '[Projects] Create';
-export const UPDATE = '[Projects] Update';
-export const DELETE = '[Projects] Delete';
-
-export const QUERY = '[Projects] Query';
-export const ADD_ALL = '[Projects] Add All';
-export const SUCCESS = '[Projects] Successful firestore write';
-
-export class Query implements Action {
-    readonly type = QUERY;
-    constructor() { }
+enum ProjectActions {
+    Query = '[Project] Query',
+    Collection = '[Project] Collection',
+    Create = '[Project] Create',
+    Read = '[Project] Read',
+    Update = '[Project] Update',
+    Delete = '[Project] Delete',
+    Success = '[Project] Success'
 }
 
-export class AddAll implements Action {
-    readonly type = ADD_ALL;
-    constructor(public projects: Project[]) { }
-}
+export const Query = createAction(
+    ProjectActions.Query
+);
 
-export class Success implements Action {
-    readonly type = SUCCESS;
-    constructor() { }
-}
+export const Collection = createAction(
+    ProjectActions.Collection,
+    props<{ projects: Project[] }>()
+);
 
+export const Create = createAction(
+    ProjectActions.Create,
+    props<{ project: Project }>()
+);
 
-export class Create implements Action {
-    readonly type = CREATE;
-    constructor(public project: Project) { }
-}
+export const Read = createAction(
+    ProjectActions.Read,
+    props<{ id: string }>()
+);
 
-export class Update implements Action {
-    readonly type = UPDATE;
-    constructor(
-        public id: string,
-        public changes: Partial<Project>,
-    ) { }
-}
+export const Update = createAction(
+    ProjectActions.Update,
+    props<{ id: string, changes: Partial<Project> }>()
+);
 
-export class Delete implements Action {
-    readonly type = DELETE;
-    constructor(public id: string) { }
-}
+export const Delete = createAction(
+    ProjectActions.Delete,
+    props<{ id: string }>()
+);
 
-export type ProjectActions
-    = Create
-    | Update
-    | Delete
-    | Query
-    | AddAll;
+export const Success = createAction(
+    ProjectActions.Success
+);

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Project } from 'src/app/stores/project';
+import * as ProjectActions from 'src/app/stores/project/project.actions';
+import * as ProjectReducers from 'src/app/stores/project/project.reducer';
 
 @Component({
   selector: 'app-projects',
@@ -8,7 +13,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  projects: Observable<Project[]>;
 
-  ngOnInit(): void { }
+  constructor(private store: Store<Project>) { }
+
+  ngOnInit(): void {
+    this.projects = this.store.select(ProjectReducers.selectAll);
+    this.store.dispatch(ProjectActions.Query());
+  }
 }
