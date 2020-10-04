@@ -1,3 +1,10 @@
 <ng-container *appHasRole="['admin']">
-    <img src="https://media.tenor.com/images/ebcdb89dd3dac8d1434c8151b6bddb16/tenor.gif" alt="Gookouloulou"/>
+    <img src="https://media.tenor.com/images/ebcdb89dd3dac8d1434c8151b6bddb16/tenor.gif" alt="Gookouloulou" />
 </ng-container>
+
+<div *ngFor="let project of projects | async">
+
+    <h3>project ID: {{ project.id }} </h3>
+    <p>name: {{ project.name }}</p>
+    <hr>
+</div>

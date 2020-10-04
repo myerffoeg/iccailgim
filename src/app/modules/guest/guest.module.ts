@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/@shared/shared.module';
 import { MaterialModule } from 'src/app/material.module';
+import { ProjectStoreModule } from 'src/app/stores';
 import { GuestRoutingModule } from './guest-routing.module';
 import { HomeComponent, ProfileComponent, ProjectsComponent } from './pages';
 
@@ -24,7 +25,8 @@ const COMPONENTS = [
     CommonModule,
     GuestRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    ProjectStoreModule
   ]
 })
 export class GuestModule { }

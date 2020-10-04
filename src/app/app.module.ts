@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { environment } from '../environments/environment';
     MaterialModule,
 
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
 
     CoreModule
   ],
