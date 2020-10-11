@@ -1,11 +1,15 @@
 :host {
-    main {
-        height: calc(100vh - 64px);
-    }
+    .content {
+        padding: 1rem;
 
-    @media (max-width: 600px) {
-        main {
-            height: calc(100vh - 56px);
+        // move card to a component
+        mat-card {
+            margin: 1rem;
+        }
+
+        img {
+            height: 15rem;
+            object-fit: cover;
         }
     }
 }

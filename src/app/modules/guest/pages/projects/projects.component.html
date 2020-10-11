@@ -1,5 +1,22 @@
-<div *ngFor="let project of projects | async">
-    <h3>project ID: {{ project.id }} </h3>
-    <p>name: {{ project.name }}</p>
-    <hr>
+<div class="content" fxLayout="row wrap">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let project of projects | async">
+        <mat-card class="mat-elevation-z2">
+            <mat-card-header fxLayout="column">
+                <mat-card-title>{{ project.name?.length ? project.name : 'Aucun nom.' }}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="https://source.unsplash.com/1600x900/?mountain,nature,water">
+            <mat-card-content>
+                <p>
+                    {{ project.description?.length ? project.description : 'Aucune description.' }}
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <!-- <mat-chip-list aria-label="Fish selection">
+                    <mat-chip>Angular</mat-chip>
+                    <mat-chip>Firebase</mat-chip>
+                    <mat-chip>ngrx</mat-chip>
+                </mat-chip-list> -->
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
