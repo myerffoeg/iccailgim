@@ -1,15 +1,9 @@
-:host {
-    .content {
-        padding: 1rem;
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 2fr));
+    align-items: stretch;
+    grid-auto-rows: auto;
+    grid-gap: 2rem;
 
-        // move card to a component
-        mat-card {
-            margin: 1rem;
-        }
-
-        img {
-            height: 15rem;
-            object-fit: cover;
-        }
-    }
+    padding: 1rem;
 }

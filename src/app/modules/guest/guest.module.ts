@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from 'src/app/@shared/shared.module';
 import { MaterialModule } from 'src/app/material.module';
 import { ProjectStoreModule } from 'src/app/stores';
+import { ProjectCardComponent } from './components';
 import { GuestRoutingModule } from './guest-routing.module';
 import { HomeComponent, ProfileComponent, ProjectsComponent } from './pages';
 
@@ -13,7 +14,7 @@ const PAGES = [
 ];
 
 const COMPONENTS = [
-
+  ProjectCardComponent
 ];
 
 @NgModule({
