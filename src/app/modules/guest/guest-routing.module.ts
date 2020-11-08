@@ -7,7 +7,8 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     data: {
-      bodyClass: 'home'
+      class: 'transparent',
+      background: `url('/assets/images/home.jpg') no-repeat center center fixed`
     }
   },
   {

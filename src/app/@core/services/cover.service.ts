@@ -9,7 +9,7 @@ import { filter } from 'rxjs/operators';
 export class CoverService {
 
   private renderer: Renderer2;
-  private bodyClass: string;
+  private class: string;
 
   constructor(
     private router: Router,
@@ -20,11 +20,15 @@ export class CoverService {
     router.events.pipe(
       filter(e => e instanceof ActivationStart)
     ).subscribe((e: ActivationStart) => {
-      if (e.snapshot?.data?.bodyClass) {
-        this.bodyClass = e.snapshot.data.bodyClass;
-        this.renderer.addClass(this.document.body, this.bodyClass);
+      if (e.snapshot?.data?.class && e.snapshot?.data?.background) {
+        this.class = e.snapshot.data.class;
+        this.renderer.addClass(this.document.body, this.class);
+        this.renderer.setStyle(this.document.body, 'background', e.snapshot.data.background);
+        this.renderer.setStyle(this.document.body, 'background-size', 'cover');
       } else {
-        this.renderer.removeClass(this.document.body, this.bodyClass);
+        this.renderer.removeClass(this.document.body, this.class);
+        this.renderer.setStyle(this.document.body, 'background', 'transparent');
+        this.renderer.setStyle(this.document.body, 'background-color', '#fafafa');
       }
     });
   }
