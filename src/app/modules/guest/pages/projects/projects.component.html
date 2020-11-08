@@ -1,3 +1,1 @@
-<div class="project-list">
-    <app-project-card *ngFor="let project of projects | async" class="project" [project]="project"></app-project-card>
-</div>
+<app-project-card *ngFor="let project of projects | async" [project]="project"></app-project-card>

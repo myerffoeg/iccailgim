@@ -1,7 +1,7 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
-import { AuthService } from './@core/services';
+import { AuthService, CoverService } from './@core/services';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +31,10 @@ import { AuthService } from './@core/services';
 })
 export class AppComponent {
 
-  constructor(public auth: AuthService) { }
+  constructor(
+    public auth: AuthService,
+    private cover: CoverService
+  ) { }
 
   prepareRoute(outlet: RouterOutlet): Data {
     return outlet?.activatedRouteData;

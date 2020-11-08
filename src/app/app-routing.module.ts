@@ -6,7 +6,7 @@ import { AppUserRole } from './@core/services/auth.service';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./modules/guest/guest.module').then(m => m.GuestModule),
+    loadChildren: () => import('./modules/guest/guest.module').then(m => m.GuestModule)
   },
   {
     path: 'admin',

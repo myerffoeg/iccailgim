@@ -1,5 +1,15 @@
+:host-context(.home) {
+    .mat-toolbar {
+        background: transparent !important;
+    }
+
+    .mat-sidenav-container {
+        background: transparent !important;
+    }
+}
+
 :host {
-    mat-toolbar {
+    .mat-toolbar {
         .spacer {
             flex: 1 1 auto;
         }
