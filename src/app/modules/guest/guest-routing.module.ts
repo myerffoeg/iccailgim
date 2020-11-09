@@ -8,7 +8,7 @@ const routes: Routes = [
     component: HomeComponent,
     data: {
       class: 'transparent',
-      background: `url('/assets/images/home.jpg') no-repeat center center fixed`
+      background: `linear-gradient(to bottom, rgba(11, 113, 132, .25), transparent), url('/assets/images/home.jpg')`
     }
   },
   {
