@@ -15,7 +15,8 @@ service cloud.firestore {
     }
 
     match /users/{document=**} {
-      allow read, write;
+      allow read: if resource.data.uid == request.auth.uid || isOneOfRoles(resource, ['admin']); 
+      allow write: if resource.data.uid == request.auth.uid || isOneOfRoles(resource, ['admin']); 
     }
 
     match /projects/{document=**} {
