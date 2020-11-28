@@ -5,14 +5,14 @@
     justify-content: center;
     height: calc(100vh - 64px);
 
-    img {
+    .me {
         height: 14vh;
         border-radius: 50%;
         filter: drop-shadow(0 0 0.5rem #111111);
         margin: 1rem;
     }
 
-    h1 {
+    .name {
         font-size: 5vw;
         line-height: 5vw;
         letter-spacing: 1rem;
@@ -20,12 +20,20 @@
         text-align: center;
     }
 
-    h2 {
+    .title {
         font-size: 3vw;
         line-height: 3vw;
         letter-spacing: 0.5rem;
         font-weight: lighter;
         text-align: center;
         color: white;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
     }
 }
