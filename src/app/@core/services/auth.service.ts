@@ -39,15 +39,19 @@ export class AuthService {
   }
 
   private updateUserData(user: User): void {
-    this.afStore.doc(`users/${user.uid}`).set({
-      roles: [AppUserRole.guest],
-      displayName: user.displayName,
-      email: user.email,
-      phoneNumber: user.phoneNumber,
-      photoURL: user.photoURL,
-      providerId: user.providerId,
-      uid: user.uid,
-    }, { merge: true });
+    this.afStore.doc(`users/${user.uid}`).get().subscribe((document) => {
+      if (!document.exists) {
+        this.afStore.doc(`users/${user.uid}`).set({
+          roles: [AppUserRole.guest],
+          displayName: user.displayName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          providerId: user.providerId,
+          uid: user.uid,
+        }, { merge: true });
+      }
+    });
   }
 
   async googleSignInWithPopup(): Promise<void> {
