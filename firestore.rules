@@ -18,23 +18,19 @@ service cloud.firestore {
    		allow read, write: if isOneOfRoles(["admin"]);
 		}
     
-    match /users/{document=**} {
+    match /users/{userId} {
       allow read, delete: if (
         isSignedIn() && 
-        resource.data.uid == request.auth.uid
+        request.auth.uid == userId
       );
-    	allow update: if (
-        isSignedIn() && 
-        resource.data.uid == request.auth.uid && 
-        !request.resource.data.roles.hasAny(["admin"])
-      );
-      allow create: if (
+      allow create, update: if (
       	isSignedIn() && 
+        request.auth.uid == userId &&
       	!request.resource.data.roles.hasAny(["admin"])
       );
   	}
     
-    match /projects/{document=**} {
+    match /projects/{projectId} {
       allow read;
       allow write: if isOneOfRoles(["admin"]);
     }
