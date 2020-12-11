@@ -5,6 +5,41 @@ $montserrat-typography: mat-typography-config(
 );
 @include mat-core($montserrat-typography);
 
+$accent: mat-palette(
+  (
+    50: #fff2ea,
+    100: #ffdfcb,
+    200: #ffcaa9,
+    300: #ffb486,
+    400: #ffa46c,
+    500: #ff9452,
+    600: #ff8c4b,
+    700: #ff8141,
+    800: #ff7738,
+    900: #ff6528,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffe0d5,
+    A700: #ffcdbc,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #000000,
+      700: #000000,
+      800: #000000,
+      900: #000000,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000,
+    ),
+  )
+);
+
 $light-primary: mat-palette(
   (
     50: #e2eef0,
@@ -39,41 +74,7 @@ $light-primary: mat-palette(
     ),
   )
 );
-$light-accent: mat-palette(
-  (
-    50: #fff2ea,
-    100: #ffdfcb,
-    200: #ffcaa9,
-    300: #ffb486,
-    400: #ffa46c,
-    500: #ff9452,
-    600: #ff8c4b,
-    700: #ff8141,
-    800: #ff7738,
-    900: #ff6528,
-    A100: #ffffff,
-    A200: #ffffff,
-    A400: #ffe0d5,
-    A700: #ffcdbc,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      300: #000000,
-      400: #000000,
-      500: #000000,
-      600: #000000,
-      700: #000000,
-      800: #000000,
-      900: #000000,
-      A100: #000000,
-      A200: #000000,
-      A400: #000000,
-      A700: #000000,
-    ),
-  )
-);
-$light-theme: mat-light-theme($light-primary, $light-accent);
+$light-theme: mat-light-theme($light-primary, $accent);
 
 $dark-primary: mat-palette(
   (
@@ -109,41 +110,7 @@ $dark-primary: mat-palette(
     ),
   )
 );
-$dark-accent: mat-palette(
-  (
-    50: #fdf5ea,
-    100: #fbe6c9,
-    200: #f9d5a6,
-    300: #f6c482,
-    400: #f4b767,
-    500: #f2aa4c,
-    600: #f0a345,
-    700: #ee993c,
-    800: #ec9033,
-    900: #e87f24,
-    A100: #ffffff,
-    A200: #fff6ef,
-    A400: #ffd9bc,
-    A700: #ffcba2,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      300: #000000,
-      400: #000000,
-      500: #000000,
-      600: #000000,
-      700: #000000,
-      800: #000000,
-      900: #000000,
-      A100: #000000,
-      A200: #000000,
-      A400: #000000,
-      A700: #000000,
-    ),
-  )
-);
-$dark-theme: mat-dark-theme($dark-primary, $dark-accent);
+$dark-theme: mat-dark-theme($dark-primary, $accent);
 
 html,
 body {
@@ -192,7 +159,7 @@ body {
 .app-dark-theme {
   @include angular-material-theme($dark-theme);
   .favicon {
-    fill: #f2aa4c;
+    fill: #ff9452;
   }
 
   background: linear-gradient(to bottom, rgba(4, 4, 4, 0.2), transparent),
@@ -206,7 +173,7 @@ body {
   ::-webkit-scrollbar-thumb {
     background: #101820;
     &:hover {
-      background: #f2aa4c;
+      background: #ff9452;
     }
   }
 }
