@@ -75,9 +75,75 @@ $light-accent: mat-palette(
 );
 $light-theme: mat-light-theme($light-primary, $light-accent);
 
-.app-light-theme {
-  @include angular-material-theme($light-theme);
-}
+$dark-primary: mat-palette(
+  (
+    50: #e2e3e4,
+    100: #b7babc,
+    200: #888c90,
+    300: #585d63,
+    400: #343b41,
+    500: #101820,
+    600: #0e151c,
+    700: #0c1118,
+    800: #090e13,
+    900: #05080b,
+    A100: #5184ff,
+    A200: #1e60ff,
+    A400: #0044ea,
+    A700: #003dd0,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #ffffff,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #ffffff,
+      A400: #ffffff,
+      A700: #ffffff,
+    ),
+  )
+);
+$dark-accent: mat-palette(
+  (
+    50: #fdf5ea,
+    100: #fbe6c9,
+    200: #f9d5a6,
+    300: #f6c482,
+    400: #f4b767,
+    500: #f2aa4c,
+    600: #f0a345,
+    700: #ee993c,
+    800: #ec9033,
+    900: #e87f24,
+    A100: #ffffff,
+    A200: #fff6ef,
+    A400: #ffd9bc,
+    A700: #ffcba2,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #000000,
+      500: #000000,
+      600: #000000,
+      700: #000000,
+      800: #000000,
+      900: #000000,
+      A100: #000000,
+      A200: #000000,
+      A400: #000000,
+      A700: #000000,
+    ),
+  )
+);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent);
 
 html,
 body {
@@ -91,17 +157,6 @@ body {
   height: 0.5rem;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0b7184;
-  &:hover {
-    background: #ff9452;
-  }
-}
-
 ::-moz-selection {
   color: #fff;
   background: #000;
@@ -110,4 +165,48 @@ body {
 ::selection {
   color: #fff;
   background: #000;
+}
+
+.app-light-theme {
+  @include angular-material-theme($light-theme);
+  .favicon {
+    fill: #ff9452;
+  }
+
+  background: linear-gradient(to bottom, rgba(11, 113, 132, 0.2), transparent),
+    url('/assets/images/light.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #0b7184;
+    &:hover {
+      background: #ff9452;
+    }
+  }
+}
+
+.app-dark-theme {
+  @include angular-material-theme($dark-theme);
+  .favicon {
+    fill: #f2aa4c;
+  }
+
+  background: linear-gradient(to bottom, rgba(4, 4, 4, 0.2), transparent),
+    url('/assets/images/dark.jpg') no-repeat center center fixed;
+  background-size: cover;
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #101820;
+    &:hover {
+      background: #f2aa4c;
+    }
+  }
 }

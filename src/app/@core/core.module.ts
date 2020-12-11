@@ -3,7 +3,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import 'firebase/firestore';
 import { environment } from 'src/environments/environment';
-import { CoverService } from './services';
+import { CoverService, ThemeService } from './services';
 
 @NgModule({
   imports: [
@@ -25,7 +25,8 @@ export class CoreModule {
         ScreenTrackingService,
         UserTrackingService,
 
-        CoverService
+        CoverService,
+        ThemeService
       ]
     };
   }

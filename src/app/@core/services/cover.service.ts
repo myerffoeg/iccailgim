@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { ActivationStart, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ThemeService } from './theme.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,22 +14,19 @@ export class CoverService {
 
   constructor(
     private router: Router,
+    private themeService: ThemeService,
     private rendererFactory: RendererFactory2,
     @Inject(DOCUMENT) private document: Document
   ) {
     this.renderer = this.rendererFactory.createRenderer(null, null);
-    router.events.pipe(
+    this.router.events.pipe(
       filter(e => e instanceof ActivationStart)
     ).subscribe((e: ActivationStart) => {
-      if (e.snapshot?.data?.class && e.snapshot?.data?.background) {
-        this.class = e.snapshot.data.class;
+      if (e.snapshot?.data?.light?.class && e.snapshot?.data?.dark?.class) {
+        this.class = this.themeService.isLightTheme() ? e.snapshot.data.light.class : e.snapshot.data.dark.class;
         this.renderer.addClass(this.document.body, this.class);
-        this.renderer.setStyle(this.document.body, 'background', e.snapshot.data.background);
-        this.renderer.setStyle(this.document.body, 'background-size', 'cover');
       } else {
         this.renderer.removeClass(this.document.body, this.class);
-        this.renderer.setStyle(this.document.body, 'background', 'transparent');
-        this.renderer.setStyle(this.document.body, 'background-color', '#fafafa');
       }
     });
   }

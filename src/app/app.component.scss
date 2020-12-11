@@ -1,4 +1,5 @@
-:host-context(.transparent) {
+:host-context(.background-light-theme),
+:host-context(.background-dark-theme) {
     .mat-toolbar {
         background: transparent !important;
     }
@@ -12,6 +13,10 @@
     .mat-toolbar {
         .spacer {
             flex: 1 1 auto;
+        }
+
+        .btn-menu {
+            margin-left: 1rem;
         }
     }
 

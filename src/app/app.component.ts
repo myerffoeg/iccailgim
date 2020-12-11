@@ -1,7 +1,7 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
-import { AuthService, CoverService } from './@core/services';
+import { AuthService, CoverService, ThemeService } from './@core/services';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +33,7 @@ export class AppComponent {
 
   constructor(
     public auth: AuthService,
+    public themeService: ThemeService,
     private cover: CoverService
   ) { }
 

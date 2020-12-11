@@ -7,8 +7,12 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     data: {
-      class: 'transparent',
-      background: `linear-gradient(to bottom, rgba(11, 113, 132, .25), transparent), url('/assets/images/home.jpg')`
+      light: {
+        class: 'background-light-theme'
+      },
+      dark: {
+        class: 'background-dark-theme'
+      }
     }
   },
   {

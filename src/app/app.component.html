@@ -1,7 +1,9 @@
 <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport role="navigation" mode="over">
         <mat-toolbar (click)="drawer.close()">
-            <img src="./favicon.svg" alt="Logo" height="32">
+            <svg class="favicon" width="32px" height="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490">
+                <path d="M23.968 122.5v245L245 490l221.032-122.5v-245L245 0 23.968 122.5zM331.3 292.828L245 340.656l-86.3-47.828V197.17l86.3-47.828 86.3 47.828v95.657z" />
+            </svg>
         </mat-toolbar>
         <mat-nav-list (click)="drawer.close()">
             <a mat-list-item routerLink="/">
@@ -18,15 +20,21 @@
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
             <span class="spacer"></span>
+            <button class="btn-menu" (click)="themeService.switchTheme()" mat-icon-button aria-label="Change theme">
+                <mat-icon *ngIf="themeService.isLightTheme(); else toggleDarkTheme" aria-label="Change theme icon">wb_sunny</mat-icon>
+                <ng-template #toggleDarkTheme>
+                    <mat-icon aria-label="Change theme icon">nights_stay</mat-icon>
+                </ng-template>
+            </button>
             <ng-container *ngIf="auth.user$ | async; then logged else guest"></ng-container>
             <ng-template #guest>
-                <button (click)="auth.googleSignInWithPopup()" mat-button aria-label="Login">
+                <button class="btn-menu" (click)="auth.googleSignInWithPopup()" mat-icon-button aria-label="Login">
                     <mat-icon>account_circle</mat-icon>
                 </button>
             </ng-template>
             <ng-template #logged>
                 <div *ngIf="auth.user$ | async as user">
-                    <button (click)="auth.signOut()" mat-button aria-label="Logout">
+                    <button class="btn-menu" (click)="auth.signOut()" mat-icon-button aria-label="Logout">
                         <mat-icon>logout</mat-icon>
                     </button>
                 </div>
