@@ -136,9 +136,6 @@ body {
 
 .app-light-theme {
   @include angular-material-theme($light-theme);
-  .favicon {
-    fill: #ff9452;
-  }
 
   background: linear-gradient(to bottom, rgba(11, 113, 132, 0.2), transparent),
     url('/assets/images/light.jpg') no-repeat center center fixed;
@@ -158,9 +155,6 @@ body {
 
 .app-dark-theme {
   @include angular-material-theme($dark-theme);
-  .favicon {
-    fill: #ff9452;
-  }
 
   background: linear-gradient(to bottom, rgba(4, 4, 4, 0.2), transparent),
     url('/assets/images/dark.jpg') no-repeat center center fixed;

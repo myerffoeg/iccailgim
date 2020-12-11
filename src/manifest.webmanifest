@@ -1,7 +1,7 @@
 {
   "name": "iccailgim",
   "short_name": "iccailgim",
-  "theme_color": "#c3002f",
+  "theme_color": "#0b7184",
   "background_color": "#000000",
   "display": "standalone",
   "scope": "./",
