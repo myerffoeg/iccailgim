@@ -5,8 +5,14 @@ import { MaterialModule } from 'src/app/material.module';
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
+const PAGES = [
+  DashboardComponent
+];
+
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [
+    ...PAGES
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

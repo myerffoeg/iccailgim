@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
@@ -18,6 +18,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   isAuthenticated(notAuthenticathed: boolean = false): Observable<boolean> {
     return this.auth.isAuthenticathed().pipe(
+      take(1),
       map(auth => notAuthenticathed !== auth),
       tap(auth => {
         if (!auth) {

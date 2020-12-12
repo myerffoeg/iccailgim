@@ -4,6 +4,9 @@
             <img alt="Logo" src="favicon.svg" height="32" />
         </mat-toolbar>
         <mat-nav-list (click)="drawer.close()">
+            <a mat-list-item routerLink="/admin" *appHasRole="['admin']">
+                <mat-icon routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">admin_panel_settings</mat-icon>
+            </a>
             <a mat-list-item routerLink="/">
                 <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">home</mat-icon>
             </a>
