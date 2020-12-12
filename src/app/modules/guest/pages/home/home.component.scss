@@ -9,6 +9,7 @@
         font-size: 5vw;
         line-height: 5vw;
         letter-spacing: 1rem;
+        letter-spacing: 0.75rem;
         font-weight: bold;
         text-align: center;
     }
@@ -19,7 +20,7 @@
         letter-spacing: 0.5rem;
         font-weight: lighter;
         text-align: center;
-        color: white;
+        text-decoration: overline;
     }
 
     :host-context(.app-dark-theme) {
@@ -28,13 +29,13 @@
         }
 
         .title {
-            color: black;
+            color: white;
         }
     }
 
     :host-context(.app-light-theme) {
         .name {
-            color: white;
+            color: black;
         }
 
         .title {
