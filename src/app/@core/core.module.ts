@@ -8,7 +8,7 @@ import { CoverService, ThemeService } from './services';
 @NgModule({
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule,
+    AngularFireAnalyticsModule
   ]
 })
 export class CoreModule {

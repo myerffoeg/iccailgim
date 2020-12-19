@@ -1,14 +1,11 @@
 <h1 class="name">MIGLIACCI GEOFFREY</h1>
 <h2 class="title">DÉVELOPPEUR FULL STACK</h2>
 <div class="links">
-    <a href="./assets/files/curriculum.pdf" target="_blank" matTooltip="CV">
-        <button mat-icon-button color="accent" aria-label="CV">
-            <mat-icon>description</mat-icon>
-        </button>
-    </a>
-    <a *ngFor="let menu_item of MENU_ITEMS" [routerLink]="menu_item.link" [matTooltip]="menu_item.tooltip">
-        <button mat-icon-button color="accent" [attr.aria-label]="menu_item.tooltip">
-            <mat-icon>{{ menu_item.icon }}</mat-icon>
-        </button>
+    <a *ngFor="let menu_item of MENU_ITEMS" mat-icon-button color="accent" [routerLink]="menu_item.link"
+        [matTooltip]="menu_item.tooltip" mat-icon-button color="accent" [attr.aria-label]="menu_item.tooltip"
+        class="large">
+        <mat-icon>
+            <fa-icon [icon]="[menu_item.type, menu_item.icon]" size="lg"></fa-icon>
+        </mat-icon>
     </a>
 </div>

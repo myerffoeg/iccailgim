@@ -1,4 +1,5 @@
 export interface AppMenu {
+    type: string;
     icon: string;
     link: string;
     tooltip: string;
@@ -6,17 +7,20 @@ export interface AppMenu {
 
 export const MENU_ITEMS: AppMenu[] = [
     {
-        icon: 'face',
+        type: 'fas',
+        icon: 'user',
         link: '/profile',
         tooltip: 'Profil'
     },
     {
-        icon: 'work',
+        type: 'fas',
+        icon: 'briefcase',
         link: '/projects',
         tooltip: 'Projets'
     },
     {
-        icon: 'send',
+        type: 'fas',
+        icon: 'envelope',
         link: '/contact',
         tooltip: 'Contact'
     }

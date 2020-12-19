@@ -5,13 +5,19 @@
         </mat-toolbar>
         <mat-nav-list (click)="drawer.close()">
             <a mat-list-item routerLink="/admin" *appHasRole="['admin']">
-                <mat-icon routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">admin_panel_settings</mat-icon>
+                <mat-icon routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">
+                    <fa-icon aria-label="Administration" [icon]="['fas', 'shield-alt']" size="lg"></fa-icon>
+                </mat-icon>
             </a>
             <a mat-list-item routerLink="/">
-                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">home</mat-icon>
+                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">
+                    <fa-icon aria-label="Acceuil" [icon]="['fas', 'home']" size="lg"></fa-icon>
+                </mat-icon>
             </a>
             <a *ngFor="let menu_item of MENU_ITEMS" mat-list-item [routerLink]="menu_item.link">
-                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">{{ menu_item.icon }}
+                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">
+                    <fa-icon [attr.aria-label]="menu_item.tooltip" [icon]="[menu_item.type, menu_item.icon]" size="lg">
+                    </fa-icon>
                 </mat-icon>
             </a>
         </mat-nav-list>
@@ -19,26 +25,30 @@
     <mat-sidenav-content fullScreen>
         <mat-toolbar color="primary">
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                <mat-icon>
+                    <fa-icon aria-label="Side nav toggle icon" [icon]="['fas', 'bars']" size="lg"></fa-icon>
+                </mat-icon>
             </button>
             <span class="spacer"></span>
             <button class="btn-menu" (click)="themeService.switchTheme()" mat-icon-button aria-label="Change theme">
                 <mat-icon *ngIf="themeService.isLightTheme(); else toggleDarkTheme" aria-label="Change theme icon">
-                    wb_sunny</mat-icon>
+                    <fa-icon [icon]="['fas', 'sun']" size="lg"></fa-icon>
+                </mat-icon>
                 <ng-template #toggleDarkTheme>
-                    <mat-icon aria-label="Change theme icon">nights_stay</mat-icon>
+                    <fa-icon [icon]="['fas', 'moon']" size="lg"></fa-icon>
                 </ng-template>
             </button>
             <ng-container *ngIf="auth.user$ | async; then logged else guest"></ng-container>
             <ng-template #guest>
-                <button class="btn-menu" (click)="auth.googleSignInWithPopup()" mat-icon-button aria-label="Login">
-                    <mat-icon>account_circle</mat-icon>
+                <button class="btn-menu" (click)="auth.googleSignInWithPopup()" mat-icon-button
+                    aria-label="Se connecter">
+                    <fa-icon [icon]="['fas', 'sign-in-alt']" size="lg"></fa-icon>
                 </button>
             </ng-template>
             <ng-template #logged>
                 <div *ngIf="auth.user$ | async as user">
-                    <button class="btn-menu" (click)="auth.signOut()" mat-icon-button aria-label="Logout">
-                        <mat-icon>logout</mat-icon>
+                    <button class="btn-menu" (click)="auth.signOut()" mat-icon-button aria-label="Se déconnecter">
+                        <fa-icon [icon]="['fas', 'sign-out-alt']" size="lg"></fa-icon>
                     </button>
                 </div>
             </ng-template>

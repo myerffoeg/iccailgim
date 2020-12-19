@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from 'src/app/@shared/shared.module';
 import { MaterialModule } from 'src/app/material.module';
 import { ProjectStoreModule } from 'src/app/stores';
@@ -28,6 +29,7 @@ const COMPONENTS = [
     GuestRoutingModule,
     MaterialModule,
     SharedModule,
+    FontAwesomeModule,
     ProjectStoreModule
   ]
 })
