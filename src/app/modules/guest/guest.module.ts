@@ -5,12 +5,13 @@ import { MaterialModule } from 'src/app/material.module';
 import { ProjectStoreModule } from 'src/app/stores';
 import { ProjectCardComponent } from './components';
 import { GuestRoutingModule } from './guest-routing.module';
-import { HomeComponent, ProfileComponent, ProjectsComponent } from './pages';
+import { ContactComponent, HomeComponent, ProfileComponent, ProjectsComponent } from './pages';
 
 const PAGES = [
   HomeComponent,
   ProjectsComponent,
-  ProfileComponent
+  ProfileComponent,
+  ContactComponent
 ];
 
 const COMPONENTS = [

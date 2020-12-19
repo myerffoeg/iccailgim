@@ -10,8 +10,9 @@
             <a mat-list-item routerLink="/">
                 <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">home</mat-icon>
             </a>
-            <a mat-list-item routerLink="/projects">
-                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">work</mat-icon>
+            <a *ngFor="let menu_item of MENU_ITEMS" mat-list-item [routerLink]="menu_item.link">
+                <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">{{ menu_item.icon }}
+                </mat-icon>
             </a>
         </mat-nav-list>
     </mat-sidenav>
@@ -22,7 +23,8 @@
             </button>
             <span class="spacer"></span>
             <button class="btn-menu" (click)="themeService.switchTheme()" mat-icon-button aria-label="Change theme">
-                <mat-icon *ngIf="themeService.isLightTheme(); else toggleDarkTheme" aria-label="Change theme icon">wb_sunny</mat-icon>
+                <mat-icon *ngIf="themeService.isLightTheme(); else toggleDarkTheme" aria-label="Change theme icon">
+                    wb_sunny</mat-icon>
                 <ng-template #toggleDarkTheme>
                     <mat-icon aria-label="Change theme icon">nights_stay</mat-icon>
                 </ng-template>
