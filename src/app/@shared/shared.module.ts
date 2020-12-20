@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { HasRoleDirective, IsAuthDirective } from './directives';
+import { TruncatePipe } from './pipes';
 
 const COMPONENTS = [
 
@@ -12,10 +13,15 @@ const DIRECTIVES = [
   IsAuthDirective
 ];
 
+const PIPES = [
+  TruncatePipe
+];
+
 @NgModule({
   declarations: [
     ...COMPONENTS,
-    ...DIRECTIVES
+    ...DIRECTIVES,
+    ...PIPES
   ],
   imports: [
     CommonModule,
@@ -23,7 +29,8 @@ const DIRECTIVES = [
   ],
   exports: [
     ...COMPONENTS,
-    ...DIRECTIVES
+    ...DIRECTIVES,
+    ...PIPES
   ]
 })
 export class SharedModule { }

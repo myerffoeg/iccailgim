@@ -1,0 +1,11 @@
+.mat-card:hover,
+.mat-card:focus,
+.mat-card:active {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.25s;
+}
+
+.mat-card {
+    transition: transform 0.25s !important;
+}
