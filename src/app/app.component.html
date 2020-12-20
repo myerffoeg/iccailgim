@@ -27,23 +27,24 @@
         <mat-toolbar color="primary">
             <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
                 <mat-icon>
-                    <fa-icon aria-label="Side nav toggle icon" [icon]="['fas', 'bars']" size="lg"></fa-icon>
+                    <fa-icon aria-label="Side nav toggle icon" [icon]="['fas', 'bars']" [fixedWidth]="true" size="lg">
+                    </fa-icon>
                 </mat-icon>
             </button>
             <span class="spacer"></span>
             <button class="btn-menu" (click)="themeService.switchTheme()" mat-icon-button aria-label="Change theme">
                 <mat-icon *ngIf="themeService.isLightTheme(); else toggleDarkTheme" aria-label="Change theme icon">
-                    <fa-icon [icon]="['fas', 'sun']" size="lg"></fa-icon>
+                    <fa-icon [icon]="['fas', 'sun']" [fixedWidth]="true" size="lg"></fa-icon>
                 </mat-icon>
                 <ng-template #toggleDarkTheme>
-                    <fa-icon [icon]="['fas', 'moon']" size="lg"></fa-icon>
+                    <fa-icon [icon]="['fas', 'moon']" [fixedWidth]="true" size="lg"></fa-icon>
                 </ng-template>
             </button>
             <ng-container *ngIf="auth.user$ | async; then logged else guest"></ng-container>
             <ng-template #guest>
                 <button class="btn-menu" (click)="auth.googleSignInWithPopup()" mat-icon-button
                     aria-label="Se connecter">
-                    <fa-icon [icon]="['fas', 'sign-in-alt']" size="lg"></fa-icon>
+                    <fa-icon [icon]="['fas', 'sign-in-alt']" [fixedWidth]="true" size="lg"></fa-icon>
                 </button>
             </ng-template>
             <ng-template #logged>
