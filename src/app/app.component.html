@@ -6,18 +6,19 @@
         <mat-nav-list (click)="drawer.close()">
             <a mat-list-item routerLink="/admin" *appHasRole="['admin']">
                 <mat-icon routerLinkActive="mat-accent" [routerLinkActiveOptions]="{exact: true}">
-                    <fa-icon aria-label="Administration" [icon]="['fas', 'shield-alt']" size="lg"></fa-icon>
+                    <fa-icon aria-label="Administration" [icon]="['fas', 'shield-alt']" [fixedWidth]="true" size="lg">
+                    </fa-icon>
                 </mat-icon>
             </a>
             <a mat-list-item routerLink="/">
                 <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">
-                    <fa-icon aria-label="Acceuil" [icon]="['fas', 'home']" size="lg"></fa-icon>
+                    <fa-icon aria-label="Acceuil" [icon]="['fas', 'home']" [fixedWidth]="true" size="lg"></fa-icon>
                 </mat-icon>
             </a>
             <a *ngFor="let menu_item of MENU_ITEMS" mat-list-item [routerLink]="menu_item.link">
                 <mat-icon routerLinkActive="mat-primary" [routerLinkActiveOptions]="{exact: true}">
-                    <fa-icon [attr.aria-label]="menu_item.tooltip" [icon]="[menu_item.type, menu_item.icon]" size="lg">
-                    </fa-icon>
+                    <fa-icon [attr.aria-label]="menu_item.tooltip" [icon]="[menu_item.type, menu_item.icon]"
+                        [fixedWidth]="true" size="lg"></fa-icon>
                 </mat-icon>
             </a>
         </mat-nav-list>
