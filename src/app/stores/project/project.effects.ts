@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { from, Observable } from 'rxjs';
+import { from } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { Project } from './project';
 import * as ProjectActions from './project.actions';
@@ -10,12 +9,11 @@ import * as ProjectActions from './project.actions';
 @Injectable()
 export class ProjectEffects {
 
-    query$: Observable<Action> = createEffect(() =>
+    getAll$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProjectActions.Query),
+            ofType(ProjectActions.getAll),
             switchMap(() => {
-                const ref = this.afs.collection<Project>('projects');
-                return ref.snapshotChanges().pipe(
+                return this.afs.collection<Project>('projects').snapshotChanges().pipe(
                     map(arr => {
                         return arr.map(doc => {
                             const data = doc.payload.doc.data();
@@ -24,66 +22,20 @@ export class ProjectEffects {
                     })
                 );
             }),
-            map(projects => {
-                return ProjectActions.Collection({ projects });
-            })
+            map(projects => ProjectActions.getAllSuccess({ projects }))
         )
     );
 
-    create$: Observable<Action> = createEffect(() =>
+    create$ = createEffect(() =>
         this.actions$.pipe(
-            ofType(ProjectActions.Create),
+            ofType(ProjectActions.createProject),
             switchMap(payload => {
-                const ref = this.afs.doc<Project>(`projects/${payload.project.id}`);
-                return from(ref.set(payload.project));
-            }),
-            map(() => {
-                return ProjectActions.Success();
-            })
-        )
-    );
-
-    read$: Observable<Action> = createEffect(() =>
-        this.actions$.pipe(
-            ofType(ProjectActions.Read),
-            switchMap(id => {
-                const ref = this.afs.doc<Project>(`projects/${id}`);
-                return ref.snapshotChanges().pipe(
-                    map(doc => {
-                        const data = doc.payload.data();
-                        return { id: doc.payload.id, ...data } as Project;
-                    })
+                delete payload.project.id;
+                return from(this.afs.collection(`projects`).add(payload.project)).pipe(
+                    map(() => payload)
                 );
             }),
-            map(() => {
-                return ProjectActions.Success();
-            })
-        )
-    );
-
-    update$: Observable<Action> = createEffect(() =>
-        this.actions$.pipe(
-            ofType(ProjectActions.Update),
-            switchMap(data => {
-                const ref = this.afs.doc<Project>(`projects/${data.id}`);
-                return from(ref.update(data.changes));
-            }),
-            map(() => {
-                return ProjectActions.Success();
-            })
-        )
-    );
-
-    delete$: Observable<Action> = createEffect(() =>
-        this.actions$.pipe(
-            ofType(ProjectActions.Delete),
-            switchMap(id => {
-                const ref = this.afs.doc<Project>(`projects/${id}`);
-                return from(ref.delete());
-            }),
-            map(() => {
-                return ProjectActions.Success();
-            })
+            map((payload) => ProjectActions.createSuccess(payload))
         )
     );
 

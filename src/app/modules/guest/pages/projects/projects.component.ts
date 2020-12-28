@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { Project } from 'src/app/stores/project';
 import * as ProjectActions from 'src/app/stores/project/project.actions';
-import * as ProjectReducers from 'src/app/stores/project/project.reducer';
+import * as ProjectSelectors from 'src/app/stores/project/project.selectors';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
-  animations: []
+  styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: Observable<Project[]>;
+  projects$ = this.store.select(ProjectSelectors.selectAll);
 
   constructor(private store: Store<Project>) { }
 
   ngOnInit(): void {
-    this.projects = this.store.select(ProjectReducers.selectAll);
-    this.store.dispatch(ProjectActions.Query());
+    this.store.dispatch(ProjectActions.getAll());
   }
 }

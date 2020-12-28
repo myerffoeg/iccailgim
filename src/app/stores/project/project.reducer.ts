@@ -4,20 +4,12 @@ import { Project } from './project';
 import * as ProjectActions from './project.actions';
 
 export const projectAdapter = createEntityAdapter<Project>();
-export interface State extends EntityState<Project> { }
+export interface ProjectState extends EntityState<Project> { }
 
-export const initialState: State = projectAdapter.getInitialState();
+export const initialState: ProjectState = projectAdapter.getInitialState();
 
 export const projectReducer = createReducer(
     initialState,
-    on(ProjectActions.Collection, (state, { projects }) => projectAdapter.setAll(projects, state))
+    on(ProjectActions.getAllSuccess, (state, { projects }) => projectAdapter.setAll(projects, state)),
+    on(ProjectActions.createSuccess, (state, { project }) => projectAdapter.addOne(project, state))
 );
-
-export const getProjectState = createFeatureSelector<State>('project');
-
-export const {
-    selectIds,
-    selectEntities,
-    selectAll,
-    selectTotal,
-} = projectAdapter.getSelectors(getProjectState);

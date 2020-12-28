@@ -8,7 +8,9 @@ import { projectReducer } from './project.reducer';
   declarations: [],
   imports: [
     StoreModule.forFeature('project', projectReducer),
-    EffectsModule.forFeature([ProjectEffects])
+    EffectsModule.forFeature([
+      ProjectEffects
+    ])
   ]
 })
 export class ProjectStoreModule { }

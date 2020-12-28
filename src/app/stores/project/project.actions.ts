@@ -1,45 +1,36 @@
-import { createAction, props, union } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Project } from './project';
 
 enum ProjectActions {
-    Query = '[Project] Query',
-    Collection = '[Project] Collection',
-    Create = '[Project] Create',
-    Read = '[Project] Read',
-    Update = '[Project] Update',
-    Delete = '[Project] Delete',
-    Success = '[Project] Success'
+    getAll = '[Project] getAll',
+    getAllSuccess = '[Project] getAllSuccess',
+    getAllError = '[Project] getAllError',
+
+    create = '[Project] create',
+    createSuccess = '[Project] createSuccess',
+    createError = '[Project] createError'
 }
 
-export const Query = createAction(
-    ProjectActions.Query
+export const getAll = createAction(
+    ProjectActions.getAll
 );
 
-export const Collection = createAction(
-    ProjectActions.Collection,
+export const getAllSuccess = createAction(
+    ProjectActions.getAllSuccess,
     props<{ projects: Project[] }>()
 );
 
-export const Create = createAction(
-    ProjectActions.Create,
+export const getAllError = createAction(
+    ProjectActions.getAllError
+);
+
+
+export const createProject = createAction(
+    ProjectActions.create,
     props<{ project: Project }>()
 );
 
-export const Read = createAction(
-    ProjectActions.Read,
-    props<{ id: string }>()
-);
-
-export const Update = createAction(
-    ProjectActions.Update,
-    props<{ id: string, changes: Partial<Project> }>()
-);
-
-export const Delete = createAction(
-    ProjectActions.Delete,
-    props<{ id: string }>()
-);
-
-export const Success = createAction(
-    ProjectActions.Success
+export const createSuccess = createAction(
+    ProjectActions.createSuccess,
+    props<{ project: Project }>()
 );
