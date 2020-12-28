@@ -1,6 +1,7 @@
 <h1 class="contact">CONTACTEZ-MOI</h1>
 <div class="links">
-    <a *ngFor="let contact_item of CONTACT_ITEMS" target="_blank" [href]="contact_item.link" mat-icon-button class="large" color="accent">
+    <a *ngFor="let contact_item of CONTACT_ITEMS" target="_blank" [href]="contact_item.link" mat-icon-button
+        class="large" color="accent" [matTooltip]="contact_item.tooltip" [attr.aria-label]="contact_item.tooltip">
         <mat-icon>
             <fa-icon [icon]="[contact_item.type, contact_item.icon]"></fa-icon>
         </mat-icon>
