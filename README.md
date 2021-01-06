@@ -1,6 +1,6 @@
-[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ficcailgim.firebaseapp.com%2F)](https://iccailgim.firebaseapp.com/)
+[![Website](https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ficcailgim.firebaseapp.com%2F)](https://migliacci.fr/)
 
-![Version](https://img.shields.io/github/package-json/v/myerffoeg/iccailgim?style=for-the-badge)
+[![Version](https://img.shields.io/github/package-json/v/myerffoeg/iccailgim?style=for-the-badge)](https://github.com/myerffoeg/iccailgim/blob/master/package.json)
 [![License](https://img.shields.io/badge/License-Creative%20Commons%20BY--NC--ND%204.0-lightgrey.svg?style=for-the-badge)](LICENSE.md)
 
 <!-- [![Code Coverage](https://img.shields.io/sonar/coverage/iccailgim?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/dashboard?id=iccailgim) -->
