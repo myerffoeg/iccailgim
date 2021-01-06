@@ -30,8 +30,4 @@ export class ThemeService {
   isLightTheme(): boolean {
     return this.currentTheme.getValue() === 'app-light-theme';
   }
-
-  isDarkTheme(): boolean {
-    return !this.isLightTheme();
-  }
 }
