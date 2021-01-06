@@ -1,14 +1,3 @@
-:host-context(.background-light-theme),
-:host-context(.background-dark-theme) {
-    .mat-toolbar {
-        background: transparent !important;
-    }
-
-    .mat-sidenav-container {
-        background: transparent !important;
-    }
-}
-
 :host {
     .mat-toolbar {
         .spacer {
