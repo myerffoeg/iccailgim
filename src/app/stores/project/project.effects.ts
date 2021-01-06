@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { from } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { from, of } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { Project } from './project';
 import * as ProjectActions from './project.actions';
 
@@ -22,7 +22,8 @@ export class ProjectEffects {
                     })
                 );
             }),
-            map(projects => ProjectActions.getAllSuccess({ projects }))
+            map(projects => ProjectActions.getAllSuccess({ projects })),
+            catchError(() => of(ProjectActions.getAllError()))
         )
     );
 
@@ -35,7 +36,8 @@ export class ProjectEffects {
                     map(() => payload)
                 );
             }),
-            map((payload) => ProjectActions.createSuccess(payload))
+            map((payload) => ProjectActions.createSuccess(payload)),
+            catchError(() => of(ProjectActions.createError()))
         )
     );
 

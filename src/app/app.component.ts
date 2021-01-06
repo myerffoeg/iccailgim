@@ -1,7 +1,7 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
-import { AuthService, CoverService, ThemeService } from './@core/services';
+import { AuthService, ThemeService } from './@core/services';
 import { MENU_ITEMS } from './app-menu';
 
 @Component({
@@ -36,8 +36,7 @@ export class AppComponent {
 
   constructor(
     public auth: AuthService,
-    public themeService: ThemeService,
-    private cover: CoverService
+    public themeService: ThemeService
   ) { }
 
   prepareRoute(outlet: RouterOutlet): Data {

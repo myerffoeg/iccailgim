@@ -5,15 +5,7 @@ import { ContactComponent, HomeComponent, ProfileComponent, ProjectsComponent } 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    data: {
-      light: {
-        class: 'background-light-theme'
-      },
-      dark: {
-        class: 'background-dark-theme'
-      }
-    }
+    component: HomeComponent
   },
   {
     path: 'profile',

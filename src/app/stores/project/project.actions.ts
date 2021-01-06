@@ -24,7 +24,6 @@ export const getAllError = createAction(
     ProjectActions.getAllError
 );
 
-
 export const createProject = createAction(
     ProjectActions.create,
     props<{ project: Project }>()
@@ -33,4 +32,8 @@ export const createProject = createAction(
 export const createSuccess = createAction(
     ProjectActions.createSuccess,
     props<{ project: Project }>()
+);
+
+export const createError = createAction(
+    ProjectActions.createError
 );
