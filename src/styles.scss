@@ -40,42 +40,6 @@ $accent: mat-palette(
   )
 );
 
-$light-primary: mat-palette(
-  (
-    50: #e2eef0,
-    100: #b6d4da,
-    200: #85b8c2,
-    300: #549ca9,
-    400: #308696,
-    500: #0b7184,
-    600: #0a697c,
-    700: #085e71,
-    800: #065467,
-    900: #034254,
-    A100: #86dfff,
-    A200: #53d2ff,
-    A400: #20c4ff,
-    A700: #07bdff,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      300: #000000,
-      400: #ffffff,
-      500: #ffffff,
-      600: #ffffff,
-      700: #ffffff,
-      800: #ffffff,
-      900: #ffffff,
-      A100: #000000,
-      A200: #000000,
-      A400: #000000,
-      A700: #000000,
-    ),
-  )
-);
-$light-theme: mat-light-theme($light-primary, $accent);
-
 $dark-primary: mat-palette(
   (
     50: #e2e3e4,
@@ -134,21 +98,6 @@ body {
   background: #000;
 }
 
-.app-light-theme {
-  @include angular-material-theme($light-theme);
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #0b7184;
-    &:hover {
-      background: #ff9452;
-    }
-  }
-}
-
 .app-dark-theme {
   @include angular-material-theme($dark-theme);
 
@@ -161,5 +110,13 @@ body {
     &:hover {
       background: #ff9452;
     }
+  }
+}
+
+.rotate {
+  transition: 1s all;
+  &:hover {
+    transform: scale(1.25);
+    transition: 1s all;
   }
 }

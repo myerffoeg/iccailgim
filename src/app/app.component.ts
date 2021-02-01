@@ -1,7 +1,7 @@
 import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Data, RouterOutlet } from '@angular/router';
-import { AuthService, ThemeService } from './@core/services';
+import { AuthService } from './@core/services';
 import { MENU_ITEMS } from './app-menu';
 
 @Component({
@@ -35,8 +35,7 @@ export class AppComponent {
   readonly MENU_ITEMS = MENU_ITEMS;
 
   constructor(
-    public auth: AuthService,
-    public themeService: ThemeService
+    public auth: AuthService
   ) { }
 
   prepareRoute(outlet: RouterOutlet): Data {
