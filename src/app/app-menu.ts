@@ -8,6 +8,12 @@ export interface AppMenu {
 export const MENU_ITEMS: AppMenu[] = [
     {
         type: 'fas',
+        icon: 'home',
+        link: '/',
+        tooltip: 'Accueil'
+    },
+    {
+        type: 'fas',
         icon: 'user',
         link: '/profile',
         tooltip: 'Profil'

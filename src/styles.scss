@@ -40,7 +40,7 @@ $accent: mat-palette(
   )
 );
 
-$dark-primary: mat-palette(
+$light-primary: mat-palette(
   (
     50: #e2e3e4,
     100: #b7babc,
@@ -74,7 +74,7 @@ $dark-primary: mat-palette(
     ),
   )
 );
-$dark-theme: mat-dark-theme($dark-primary, $accent);
+$light-theme: mat-light-theme($light-primary, $accent);
 
 html,
 body {
@@ -98,8 +98,8 @@ body {
   background: #000;
 }
 
-.app-dark-theme {
-  @include angular-material-theme($dark-theme);
+.app-light-theme {
+  @include angular-material-theme($light-theme);
 
   ::-webkit-scrollbar-track {
     background: #f1f1f1;
