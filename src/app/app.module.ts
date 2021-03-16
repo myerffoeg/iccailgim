@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,12 +33,17 @@ import { MaterialModule } from './material.module';
 
     CoreModule.forRoot()
   ],
+  providers: [
+    { provide: LOCALE_ID, useValue: "fr-FR" },
+  ],
   bootstrap: [
     AppComponent
   ]
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
+    registerLocaleData(localeFr);
+
     library.addIcons(
       ...FAS,
       ...FAB

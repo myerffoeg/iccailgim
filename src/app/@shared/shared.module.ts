@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material.module';
 import { HasRoleDirective, IsAuthDirective } from './directives';
-import { TruncatePipe } from './pipes';
+import { DatedifferencePipe, TruncatePipe } from './pipes';
 
 const COMPONENTS = [
 
@@ -14,14 +14,15 @@ const DIRECTIVES = [
 ];
 
 const PIPES = [
-  TruncatePipe
+  TruncatePipe,
+  DatedifferencePipe
 ];
 
 @NgModule({
   declarations: [
     ...COMPONENTS,
     ...DIRECTIVES,
-    ...PIPES
+    ...PIPES,
   ],
   imports: [
     CommonModule,
