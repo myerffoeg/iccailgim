@@ -178,7 +178,7 @@ export const PROFILE: AppProfile = {
       company: `Ellyos`,
       city: `Witry-Lès-Reims`,
       country: `France`,
-      start: new Date(2019, 4),
+      start: new Date(2019, 3),
       end: new Date(2019, 8),
       description: `
       <ul>
@@ -195,7 +195,7 @@ export const PROFILE: AppProfile = {
       company: `Reims`,
       city: `Witry-Lès-Reims`,
       country: `France`,
-      start: new Date(2018, 3),
+      start: new Date(2018, 4),
       end: new Date(2018, 7),
       description: `
       <ul>
@@ -218,11 +218,24 @@ export const PROFILE: AppProfile = {
       description: `
       <ul>
         <li>
-          Maintenance évolutive et corrective d'une application de gestion de CE :
-          <ul>
-            <li>AngularJS pour le frontend</li>
-            <li>Symfony 2 pour le backend</li>
-          </ul>
+          Maintenance évolutive et corrective de modules Prestashop.
+        </li>
+        <li>
+        Mise à jour de Prestashop vers sa dernière version en date fluide pour les clients, sans aucun arrêt des services ou du site.
+        </li>
+      </ul>`
+    },
+    {
+      name: `STAGIAIRE DÉVELOPPEUR`,
+      company: `Laon`,
+      city: `Internet Boutique`,
+      country: `France`,
+      start: new Date(2015, 4),
+      end: new Date(2015, 5),
+      description: `
+      <ul>
+        <li>
+          Maintenance évolutive et corrective de modules Prestashop.
         </li>
       </ul>`
     }

@@ -34,7 +34,7 @@ import { MaterialModule } from './material.module';
     CoreModule.forRoot()
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "fr-FR" },
+    { provide: LOCALE_ID, useValue: 'fr-FR' },
   ],
   bootstrap: [
     AppComponent
@@ -43,7 +43,6 @@ import { MaterialModule } from './material.module';
 export class AppModule {
   constructor(library: FaIconLibrary) {
     registerLocaleData(localeFr);
-
     library.addIcons(
       ...FAS,
       ...FAB
