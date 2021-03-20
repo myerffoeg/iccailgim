@@ -4,17 +4,17 @@
   <h1>COMPÉTENCES</h1>
   <h2>FRAMEWORKS</h2>
   <div class="logos">
-    <img *ngFor="let framework of PROFILE.frameworks" [src]="framework.logo" [alt]="framework.name"
+    <img class="logo" *ngFor="let framework of PROFILE.frameworks" [src]="framework.logo" [alt]="framework.name"
       [matTooltip]="framework.name" matTooltipPosition="right" />
   </div>
   <h2>LANGUAGES</h2>
   <div class="logos">
-    <img *ngFor="let language of PROFILE.languages" [src]="language.logo" [alt]="language.name"
+    <img class="logo" *ngFor="let language of PROFILE.languages" [src]="language.logo" [alt]="language.name"
       [matTooltip]="language.name" matTooltipPosition="right" />
   </div>
   <h2>AUTRES</h2>
   <div class="logos">
-    <img *ngFor="let other of PROFILE.others" [src]="other.logo" [alt]="other.name"
+    <img class="logo" *ngFor="let other of PROFILE.others" [src]="other.logo" [alt]="other.name"
       [matTooltip]="other.name" matTooltipPosition="right" />
   </div>
   <h1>LANGUES</h1>
