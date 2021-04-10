@@ -72,6 +72,10 @@ export const PROFILE: AppProfile = {
     {
       name: 'jQuery',
       logo: './assets/logos/jquery.svg'
+    },
+    {
+      name: 'Bootstrap',
+      logo: './assets/logos/bootstrap.svg'
     }
   ],
   languages: [

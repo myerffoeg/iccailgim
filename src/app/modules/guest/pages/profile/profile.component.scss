@@ -18,17 +18,17 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-bottom: 1rem;
-    }
 
-    .logo {
-      width: 5rem;
-      height: 5rem;
-      transition: transform 0.5s;
-
-      &:hover {
-        transform: scale(1.25);
+      img {
+        width: 5rem;
+        height: 5rem;
         transition: transform 0.5s;
-        z-index: 999;
+
+        &:hover {
+          transform: scale(1.25);
+          transition: transform 0.5s;
+          z-index: 999;
+        }
       }
     }
 
@@ -44,7 +44,7 @@
     overflow: auto;
     position: relative;
     flex-direction: column;
-    flex: 3;
+    flex: 4;
     color: #ffffff;
     background-color: #101820;
     padding: 1.5rem;
