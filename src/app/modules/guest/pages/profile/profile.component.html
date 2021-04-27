@@ -32,7 +32,7 @@
   <ng-container *ngFor="let experience of PROFILE.experiences">
     <h2>{{ experience.name }}</h2>
     <h3>{{ experience.company }}, {{ experience.city }}, {{ experience.country }}</h3>
-    <h4 class="date">
+    <h4>
       <fa-icon [icon]="['fas', 'calendar-alt']"></fa-icon>
       {{ experience.start | date:'MMMM y' | titlecase }} - {{ experience.end ? (experience.end | date:'MMMM y' | titlecase) : 'Maintenant' }}
       ({{ experience.start | datedifference:experience?.end }})

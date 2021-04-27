@@ -22,7 +22,7 @@ export const CONTACT_ITEMS: AppContact[] = [
     {
         type: 'fab',
         icon: 'linkedin-in',
-        link: 'https://www.linkedin.com/in/geoffrey-migliacci/',
+        link: 'https://www.linkedin.com/in/myerffoeg/',
         tooltip: 'LinkedIn'
     }
 ];

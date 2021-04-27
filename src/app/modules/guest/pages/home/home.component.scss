@@ -4,13 +4,16 @@
   align-items: center;
   justify-content: center;
   height: calc(100vh - 64px);
+  background-color: transparent;
+  background: url('/assets/images/home.jpg') no-repeat center center fixed;
+  background-size: cover;
 
   .name {
     font-size: 5vw;
     line-height: 5vw;
     letter-spacing: 1rem;
     letter-spacing: 0.75rem;
-    font-weight: 800;
+    font-weight: 600;
     text-align: center;
   }
 
@@ -18,7 +21,13 @@
     font-size: 3vw;
     line-height: 3vw;
     letter-spacing: 0.5rem;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  :host {
+    height: calc(100vh - 56px);
   }
 }
