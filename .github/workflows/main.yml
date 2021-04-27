@@ -14,7 +14,8 @@ jobs:
       with:
         node-version: '14.x'
     - run: npm install
-    - run: npm run build:prod
+    - run: ng lint
+    - run: ng build --aot --prod --build-optimizer
     - uses: w9jds/firebase-action@master
       with:
         args: deploy
