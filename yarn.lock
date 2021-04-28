@@ -1394,12 +1394,12 @@
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.4.0.tgz#becce788818d3f47f0ac1a74c3c061ac1dcf4f6d"
   integrity sha512-8cUA/mg0S+BxIZ72TdZRsXKBP5n5uRcE3k29TZhZw6oIiHBt9JA7CTb/4pE1uKtE/q5NeTY2tBDcagoZ+1zjXQ==
 
-"@fortawesome/angular-fontawesome@^0.8.2":
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/@fortawesome/angular-fontawesome/-/angular-fontawesome-0.8.2.tgz#fe0401c66dd237fd78d3f29d540ef7302bb40e5a"
-  integrity sha512-K/AiykA4YbHKE6XKEtZ0ZvVRQocUHyk+79HYWIfhGy3teHpzxsUqB/UjDaxivgBd6dF6ihlzgEbgrDMHlGNwGg==
+"@fortawesome/angular-fontawesome@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/angular-fontawesome/-/angular-fontawesome-0.7.0.tgz#af9ac19e035960e9c05615ae86aac3b737ad7b13"
+  integrity sha512-U+eHYbKuVYrrm9SnIfl+z+6KTiI4Pu+S2OKh34JIi7C1jHhDcrVeDZISP/cpswHY7LWWDOPYeKE+yuWFlL4aVw==
   dependencies:
-    tslib "^2.1.0"
+    tslib "^2.0.0"
 
 "@fortawesome/fontawesome-common-types@^0.2.34":
   version "0.2.34"
@@ -1698,10 +1698,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/jasmine@*", "@types/jasmine@~3.6.2":
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.6.2.tgz#02f64450016f7de70f145d698be311136d7c6374"
-  integrity sha512-AzfesNFLvOs6Q1mHzIsVJXSeUnqVh4ZHG8ngygKJfbkcSLwzrBVm/LKa+mR8KrOfnWtUL47112gde1MC0IXqpQ==
+"@types/jasmine@*", "@types/jasmine@~3.6.10":
+  version "3.6.10"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.6.10.tgz#c49d5660bda6e935782e5c83deb1d3b6efb3fac6"
+  integrity sha512-yfCl7JGtIc5LjScFpeIGBBNhJFkJdAAcsAnAd9ZRHwzh+sR2zkt257BKkTCF5VpJ8wMPnzzZ8QatRdXM8tqpKA==
 
 "@types/jasminewd2@~2.0.3":
   version "2.0.8"
