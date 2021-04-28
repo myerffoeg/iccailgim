@@ -1,22 +1,30 @@
 name: main
 
 on:
+  pull_request:
+    branches:
+    - master
   push:
     branches:
     - master
 
 jobs:
-  firebase-deploy:
+  main:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
     - uses: actions/setup-node@master
       with:
         node-version: '14.x'
-    - run: npm install
-    - run: npm run ng lint
-    - run: npm run ng build --aot --prod --build-optimizer
-    - uses: w9jds/firebase-action@master
+    - name: 'Dependancy installation...'
+      run: npm install
+    - name: 'Linting...'
+      run: npm run ng lint
+    - name: 'Building...'
+      run: npm run ng build --aot --prod --build-optimizer
+    - name: 'Deploying to Firebase...'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      uses: w9jds/firebase-action@master
       with:
         args: deploy
       env:
