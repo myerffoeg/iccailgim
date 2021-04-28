@@ -5,7 +5,7 @@
 
 <!-- [![Code Coverage](https://img.shields.io/sonar/coverage/iccailgim?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/dashboard?id=iccailgim) -->
 [![SonarCloud](https://img.shields.io/sonar/quality_gate/iccailgim?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge)](https://sonarcloud.io/dashboard?id=iccailgim)
-[![CI](https://img.shields.io/travis/com/myerffoeg/iccailgim?style=for-the-badge)](https://travis-ci.com/myerffoeg/iccailgim)
+[![CI](https://img.shields.io/github/workflow/status/myerffoeg/iccailgim/firebase/master?style=for-the-badge)](https://github.com/myerffoeg/iccailgim/actions/workflows/firebase.yml)
 
 [![Twitter Followers](https://img.shields.io/twitter/follow/myerffoeg.svg?logo=twitter&style=for-the-badge&label=Follow)](https://twitter.com/myerffoeg)
 [![Github Followers](https://img.shields.io/github/followers/myerffoeg?logo=github&style=for-the-badge)](https://github.com/myerffoeg)
