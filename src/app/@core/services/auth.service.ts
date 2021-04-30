@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { auth, User } from 'firebase/app';
+import { User } from '@firebase/auth-types';
 import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
+import firebase from 'firebase/app';
 
 export enum AppUserRole {
   guest = 'guest',
@@ -55,7 +56,7 @@ export class AuthService {
   }
 
   async googleSignInWithPopup(): Promise<void> {
-    this.afAuth.signInWithPopup(new auth.GoogleAuthProvider()).then((value: auth.UserCredential) => {
+    this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then((value: firebase.auth.UserCredential) => {
       if (value) {
         this.updateUserData(value.user);
       }
