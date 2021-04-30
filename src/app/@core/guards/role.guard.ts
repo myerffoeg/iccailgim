@@ -22,7 +22,7 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanLoad {
       take(1),
       tap(hasSomeRoles => {
         if (!hasSomeRoles) {
-          this.matSnackBar.open(`You miss the authorization to see this page.`, '', {
+          this.matSnackBar.open(`Vous n'avez pas les droits pour accéder à cette page.`, '', {
             duration: 7500,
             horizontalPosition: 'right',
             verticalPosition: 'bottom',

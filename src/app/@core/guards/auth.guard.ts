@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
       map(auth => notAuthenticathed !== auth),
       tap(auth => {
         if (!auth) {
-          this.matSnackBar.open(`You miss the authorization to see this page.`, '', {
+          this.matSnackBar.open(`Vous n'avez pas les droits pour accéder à cette page.`, '', {
             duration: 7500,
             horizontalPosition: 'right',
             verticalPosition: 'bottom',
