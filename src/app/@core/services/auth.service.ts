@@ -3,9 +3,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { User } from '@firebase/auth-types';
+import firebase from 'firebase/app';
 import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import firebase from 'firebase/app';
 
 export enum AppUserRole {
   guest = 'guest',
