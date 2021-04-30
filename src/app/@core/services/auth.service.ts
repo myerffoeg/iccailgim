@@ -40,7 +40,7 @@ export class AuthService {
   }
 
   private updateUserData(user: User): void {
-    this.afStore.doc(`users/${user.uid}`).get().subscribe((document) => {
+    this.afStore.doc(`users/${user.uid}`).get().subscribe((document: firebase.firestore.DocumentSnapshot<User>) => {
       if (!document.exists) {
         this.afStore.doc(`users/${user.uid}`).set({
           roles: [AppUserRole.guest],
