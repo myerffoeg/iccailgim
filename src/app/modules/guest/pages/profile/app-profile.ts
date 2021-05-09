@@ -151,12 +151,11 @@ export const PROFILE: AppProfile = {
       description: `
       <ul>
         <li>
-          Maintenance évolutive et corrective d'une application de gestion de demandes interopérables le tout sur le
-          fournisseur cloud Azure, utilisant :
+          Maintenance évolutive et corrective d'une application de gestion de demandes interopérables le tout sur le fournisseur cloud Azure, utilisant :
           <ul>
-            <li>Angular pour la partie web frontend</li>
-            <li>Xamarin pour iOS et Android frontend</li>
-            <li>ASP .NET pour l'API backend</li>
+            <li>Angular pour la partie web front-end</li>
+            <li>Xamarin pour iOS et Android front-end</li>
+            <li>ASP .NET pour l'API back-end</li>
             <li>TSQL pour la sauvegarde des données</li>
           </ul>
         </li>
@@ -206,8 +205,8 @@ export const PROFILE: AppProfile = {
         <li>
           Maintenance évolutive et corrective d'une application de gestion de CE :
           <ul>
-            <li>AngularJS pour le frontend</li>
-            <li>Symfony 2 pour le backend</li>
+            <li>AngularJS pour le front-end</li>
+            <li>Symfony 2 pour le back-end</li>
           </ul>
         </li>
       </ul>`
@@ -222,10 +221,10 @@ export const PROFILE: AppProfile = {
       description: `
       <ul>
         <li>
-          Maintenance évolutive et corrective de modules Prestashop.
+          Maintenance évolutive et corrective de modules Prestashop
         </li>
         <li>
-        Mise à jour de Prestashop vers sa dernière version en date fluide pour les clients, sans aucun arrêt des services ou du site.
+        Mise à jour de Prestashop vers sa dernière version en date fluide pour les clients, sans aucun arrêt des services ou du site
         </li>
       </ul>`
     },
@@ -239,7 +238,7 @@ export const PROFILE: AppProfile = {
       description: `
       <ul>
         <li>
-          Maintenance évolutive et corrective de modules Prestashop.
+          Maintenance évolutive et corrective de modules Prestashop
         </li>
       </ul>`
     }
