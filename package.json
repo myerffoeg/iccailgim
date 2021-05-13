@@ -39,7 +39,7 @@
     "@ngrx/entity": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngx-pwa/local-storage": "^10.1.0",
-    "firebase": "^8.5.0",
+    "firebase": "^8.6.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.2.0",
     "zone.js": "~0.10.3"
