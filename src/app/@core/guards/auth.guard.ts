@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
@@ -12,8 +11,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(
     private auth: AuthService,
-    private router: Router,
-    private matSnackBar: MatSnackBar
+    private router: Router
   ) { }
 
   isAuthenticated(notAuthenticathed: boolean = false): Observable<boolean> {
@@ -22,11 +20,6 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
       map(auth => notAuthenticathed !== auth),
       tap(auth => {
         if (!auth) {
-          this.matSnackBar.open(`Vous n'avez pas les droits pour accéder à cette page.`, '', {
-            duration: 7500,
-            horizontalPosition: 'right',
-            verticalPosition: 'bottom',
-          });
           this.router.navigate(['/']);
         }
       })

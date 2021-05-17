@@ -1,86 +1,11 @@
-@import '~@angular/material/theming';
-
-$montserrat-typography: mat-typography-config(
-  $font-family: 'Montserrat',
-);
-@include mat-core($montserrat-typography);
-
-$accent: mat-palette(
-  (
-    50: #fff2ea,
-    100: #ffdfcb,
-    200: #ffcaa9,
-    300: #ffb486,
-    400: #ffa46c,
-    500: #ff9452,
-    600: #ff8c4b,
-    700: #ff8141,
-    800: #ff7738,
-    900: #ff6528,
-    A100: #ffffff,
-    A200: #ffffff,
-    A400: #ffe0d5,
-    A700: #ffcdbc,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      300: #000000,
-      400: #000000,
-      500: #000000,
-      600: #000000,
-      700: #000000,
-      800: #000000,
-      900: #000000,
-      A100: #000000,
-      A200: #000000,
-      A400: #000000,
-      A700: #000000,
-    ),
-  )
-);
-
-$light-primary: mat-palette(
-  (
-    50: #e2e3e4,
-    100: #b7babc,
-    200: #888c90,
-    300: #585d63,
-    400: #343b41,
-    500: #101820,
-    600: #0e151c,
-    700: #0c1118,
-    800: #090e13,
-    900: #05080b,
-    A100: #5184ff,
-    A200: #1e60ff,
-    A400: #0044ea,
-    A700: #003dd0,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      300: #ffffff,
-      400: #ffffff,
-      500: #ffffff,
-      600: #ffffff,
-      700: #ffffff,
-      800: #ffffff,
-      900: #ffffff,
-      A100: #000000,
-      A200: #ffffff,
-      A400: #ffffff,
-      A700: #ffffff,
-    ),
-  )
-);
-$light-theme: mat-light-theme($light-primary, $accent);
+@import '_bootstrap.scss';
 
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', Helvetica, sans-serif !important;
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -98,25 +23,13 @@ body {
   background: #000;
 }
 
-.app-light-theme {
-  @include angular-material-theme($light-theme);
-
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: #101820;
-    &:hover {
-      background: #ff9452;
-    }
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.rotate {
-  transition: 1s all;
+::-webkit-scrollbar-thumb {
+  background: #101820;
   &:hover {
-    transform: scale(1.25);
-    transition: 1s all;
+    background: #ff9452;
   }
 }

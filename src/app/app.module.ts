@@ -11,7 +11,6 @@ import { SharedModule } from './@shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FAB, FAS } from './font-awesome';
-import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { MaterialModule } from './material.module';
     SharedModule,
 
     FontAwesomeModule,
-    MaterialModule,
 
     // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 

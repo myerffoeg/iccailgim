@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MENU_ITEMS } from 'src/app/app-menu';
+import { CONTACT_ITEMS } from './app-contact';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { MENU_ITEMS } from 'src/app/app-menu';
 })
 export class HomeComponent implements OnInit {
 
-  readonly MENU_ITEMS = MENU_ITEMS;
+  readonly CONTACT_ITEMS = CONTACT_ITEMS;
 
   constructor() { }
 

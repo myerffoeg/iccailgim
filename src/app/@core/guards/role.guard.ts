@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
@@ -14,7 +13,6 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(
     private role: RoleService,
     private router: Router,
-    private matSnackBar: MatSnackBar
   ) { }
 
   hasSomeRoles(roles: AppUserRole[]): Observable<boolean> {
@@ -22,11 +20,6 @@ export class RoleGuard implements CanActivate, CanActivateChild, CanLoad {
       take(1),
       tap(hasSomeRoles => {
         if (!hasSomeRoles) {
-          this.matSnackBar.open(`Vous n'avez pas les droits pour accéder à cette page.`, '', {
-            duration: 7500,
-            horizontalPosition: 'right',
-            verticalPosition: 'bottom',
-          });
           this.router.navigate(['/']);
         }
       })

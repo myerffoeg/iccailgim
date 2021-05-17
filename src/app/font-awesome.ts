@@ -32,7 +32,8 @@ export const FAS = [
   faPaperPlane,
   faPhoneAlt,
   faDownload,
-  faCalendarAlt
+  faCalendarAlt,
+  faBars
 ];
 
 export const FAB = [

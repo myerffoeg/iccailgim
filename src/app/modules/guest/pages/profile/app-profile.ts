@@ -135,7 +135,7 @@ export const PROFILE: AppProfile = {
       name: 'Français (bilingue ou langue natale)'
     },
     {
-      name: 'Anglais (compétence professionnelle complète)'
+      name: 'Anglais (compétence complète)'
     },
     {
       name: 'Italien (notions élémentaires)'
@@ -148,6 +148,7 @@ export const PROFILE: AppProfile = {
       city: `Witry-Lès-Reims`,
       country: `France`,
       start: new Date(2019, 9),
+      end: new Date(2021, 4),
       description: `
       <ul>
         <li>
@@ -189,7 +190,7 @@ export const PROFILE: AppProfile = {
           Maintenance évolutive et corrective d’une API REST ASP.NET Core avec une application Xamarin
         </li>
         <li>
-          Initialisation du projet web de gestion de demandes Angular
+          Initialisation du projet web de gestion de demandes sous Angular
         </li>
       </ul>`
     },

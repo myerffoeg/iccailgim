@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from '../material.module';
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavbarComponent } from './components';
 import { HasRoleDirective, IsAuthDirective } from './directives';
 import { DatedifferencePipe, TruncatePipe } from './pipes';
 
 const COMPONENTS = [
-
+  NavbarComponent
 ];
 
 const DIRECTIVES = [
@@ -26,7 +28,8 @@ const PIPES = [
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    RouterModule,
+    FontAwesomeModule
   ],
   exports: [
     ...COMPONENTS,

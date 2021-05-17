@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { User } from '@firebase/auth-types';
 import firebase from 'firebase/app';
@@ -31,7 +30,6 @@ export class AuthService {
   user$: Observable<AppUser>;
 
   constructor(
-    private matSnackBar: MatSnackBar,
     private afAuth: AngularFireAuth,
     private afStore: AngularFirestore,
     private router: Router
@@ -62,12 +60,6 @@ export class AuthService {
       if (value) {
         this.updateUserData(value.user);
       }
-    }, () => {
-      this.matSnackBar.open(`Une erreur est survenue lors de votre connexion.`, '', {
-        duration: 7500,
-        horizontalPosition: 'right',
-        verticalPosition: 'bottom',
-      });
     });
   }
 

@@ -1,23 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideMockStore } from '@ngrx/store/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { ProjectsComponent } from './projects.component';
 
 describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
   let fixture: ComponentFixture<ProjectsComponent>;
 
-  const initialState = { loggedIn: false };
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        ProjectsComponent
-      ],
-      providers: [
-        provideMockStore({ initialState })
-      ]
-    }).compileComponents();
-  }));
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ProjectsComponent ]
+    })
+    .compileComponents();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectsComponent);

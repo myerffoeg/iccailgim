@@ -1,29 +1,15 @@
-<nav id="nav" class="d-flex flex-column justify-content-center">
-  <ul>
-    <li>
-      <a href="#home">
-        <fa-icon [icon]="['fas', 'home']"></fa-icon>
-      </a>
-    </li>
-    <li>
-      <a href="#profile">
-        <fa-icon [icon]="['fas', 'file']"></fa-icon>
-      </a>
-    </li>
-    <li>
-      <a href="#portfolio">
-        <fa-icon [icon]="['fab', 'linkedin-in']"></fa-icon>
-      </a>
-    </li>
-    <li>
-      <a href="#projects">
-        <fa-icon [icon]="['fab', 'linkedin-in']"></fa-icon>
-      </a>
-    </li>
-    <li>
-      <a href="#contact">
-        <fa-icon [icon]="['fab', 'linkedin-in']"></fa-icon>
-      </a>
-    </li>
-  </ul>
+<nav class="navbar navbar-expand-lg fixed-top navbar-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">
+      <img src="favicon.svg" width="32" height="32" alt="Migliacci Geoffrey">
+    </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profile">PROFIL</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/projects">PROJETS</a>
+      </li>
+    </ul>
+  </div>
 </nav>

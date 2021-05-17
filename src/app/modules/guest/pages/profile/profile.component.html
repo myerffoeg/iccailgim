@@ -1,49 +1,50 @@
-<aside class="profile">
-  <h1>PROFIL</h1>
-  <p>{{ PROFILE.profile }}</p>
-  <h1>COMPÉTENCES</h1>
-  <h2>FRAMEWORKS</h2>
-  <div class="logos">
-    <img class="logo" *ngFor="let framework of PROFILE.frameworks" [src]="framework.logo" [alt]="framework.name"
-      [matTooltip]="framework.name" matTooltipPosition="right" />
+<section class="mt-5 pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h3 class="text-uppercase font-weight-bold">PROFIL</h3>
+        <p>{{ PROFILE.profile }}</p>
+        <h3 class="text-uppercase font-weight-bold">EXPÉRIENCES PROFESSIONNELLES</h3>
+        <ng-container *ngFor="let experience of PROFILE.experiences">
+          <h5>{{ experience.name }}</h5>
+          <h5>{{ experience.company }}, {{ experience.city }}, {{ experience.country }}</h5>
+          <h6>
+            <fa-icon [icon]="['fas', 'calendar-alt']"></fa-icon>
+            {{ experience.start | date:'MMMM y' | titlecase }} - {{ experience.end ? (experience.end | date:'MMMM y' |
+            titlecase) : 'Maintenant' }}
+            ({{ experience.start | datedifference:experience?.end }})
+          </h6>
+          <div [innerHTML]="experience.description"></div>
+        </ng-container>
+        <h3 class="text-uppercase font-weight-bold">FORMATIONS</h3>
+        <ng-container *ngFor="let education of PROFILE.educations">
+          <h5>{{ education.date | date:'y' }}</h5>
+          <h5>{{ education.name }}</h5>
+          <h6 *ngIf="education.mention">{{ education.mention }}</h6>
+          <h6>{{ education.school }}</h6>
+        </ng-container>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-uppercase font-weight-bold">COMPÉTENCES</h3>
+        <h4>FRAMEWORKS</h4>
+        <div class="skills">
+          <img class="skill" *ngFor="let framework of PROFILE.frameworks" [src]="framework.logo"
+            [alt]="framework.name" />
+        </div>
+        <h4>LANGUAGES</h4>
+        <div class="skills">
+          <img class="skill" *ngFor="let language of PROFILE.languages" [src]="language.logo" [alt]="language.name" />
+        </div>
+        <h4>LANGUES</h4>
+        <ul class="list-unstyled">
+          <li *ngFor="let tongue of PROFILE.tongues">
+            {{ tongue.name}}
+          </li>
+        </ul>
+        <a mat-fab aria-label="CV" href="./assets/files/curriculum.pdf" target="_blank">
+          <fa-icon [icon]="['fas', 'download']" size="3x"></fa-icon>
+        </a>
+      </div>
+    </div>
   </div>
-  <h2>LANGUAGES</h2>
-  <div class="logos">
-    <img class="logo" *ngFor="let language of PROFILE.languages" [src]="language.logo" [alt]="language.name"
-      [matTooltip]="language.name" matTooltipPosition="right" />
-  </div>
-  <h2>AUTRES</h2>
-  <div class="logos">
-    <img class="logo" *ngFor="let other of PROFILE.others" [src]="other.logo" [alt]="other.name"
-      [matTooltip]="other.name" matTooltipPosition="right" />
-  </div>
-  <h1>LANGUES</h1>
-  <ul>
-    <li *ngFor="let tongue of PROFILE.tongues">
-      {{ tongue.name}}
-    </li>
-  </ul>
-</aside>
-<section class="resume">
-  <a mat-fab aria-label="CV" href="./assets/files/curriculum.pdf" target="_blank" matTooltip="Curriculum vitæ" matTooltipPosition="left" class="large">
-    <fa-icon [icon]="['fas', 'download']" size="lg"></fa-icon>
-  </a>
-  <h1>EXPÉRIENCES PROFESSIONNELLES</h1>
-  <ng-container *ngFor="let experience of PROFILE.experiences">
-    <h2>{{ experience.name }}</h2>
-    <h3>{{ experience.company }}, {{ experience.city }}, {{ experience.country }}</h3>
-    <h4>
-      <fa-icon [icon]="['fas', 'calendar-alt']"></fa-icon>
-      {{ experience.start | date:'MMMM y' | titlecase }} - {{ experience.end ? (experience.end | date:'MMMM y' | titlecase) : 'Maintenant' }}
-      ({{ experience.start | datedifference:experience?.end }})
-    </h4>
-    <div [innerHTML]="experience.description"></div>
-  </ng-container>
-  <h1>FORMATIONS</h1>
-  <ng-container *ngFor="let education of PROFILE.educations">
-    <h2>{{ education.date | date:'y' }}</h2>
-    <h3>{{ education.name }}</h3>
-    <h4 *ngIf="education.mention">{{ education.mention }}</h4>
-    <h4>{{ education.school }}</h4>
-  </ng-container>
 </section>

@@ -1,2 +1,12 @@
-<h1 class="name">MIGLIACCI GEOFFREY</h1>
-<h2 class="title">DÉVELOPPEUR FULL STACK</h2>
+<div class="container">
+  <div class="row d-flex align-items-center">
+    <div class="col-md-12 text-center text-md-left">
+      <h1 class="text-white text-uppercase font-weight-bold">MIGLIACCI GEOFFREY</h1>
+      <h2 class="text-white text-uppercase font-weight-light">DÉVELOPPEUR FULL STACK</h2>
+      <a *ngFor="let contact_item of CONTACT_ITEMS" class="text-secondary display-4 mr-4" target="_blank"
+        [href]="contact_item.link" [attr.aria-label]="contact_item.tooltip">
+        <fa-icon [icon]="[contact_item.type, contact_item.icon]"></fa-icon>
+      </a>
+    </div>
+  </div>
+</div>

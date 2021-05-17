@@ -24,5 +24,11 @@ export const CONTACT_ITEMS: AppContact[] = [
         icon: 'linkedin-in',
         link: 'https://www.linkedin.com/in/myerffoeg/',
         tooltip: 'LinkedIn'
+    },
+    {
+        type: 'fab',
+        icon: 'github',
+        link: 'https://github.com/myerffoeg',
+        tooltip: 'Github'
     }
 ];
