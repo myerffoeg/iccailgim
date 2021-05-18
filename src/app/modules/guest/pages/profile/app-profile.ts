@@ -135,7 +135,7 @@ export const PROFILE: AppProfile = {
       name: 'Français (bilingue ou langue natale)'
     },
     {
-      name: 'Anglais (compétence complète)'
+      name: 'Anglais (compétence professionnelle)'
     },
     {
       name: 'Italien (notions élémentaires)'

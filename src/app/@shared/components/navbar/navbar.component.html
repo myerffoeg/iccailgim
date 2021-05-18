@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light">
+<nav class="navbar navbar-expand fixed-top" [ngClass]="{'navbar-dark bg-primary': pageYOffset > 99, 'navbar-light': pageYOffset < 100}">
   <div class="container">
     <a class="navbar-brand" routerLink="/">
       <img src="favicon.svg" width="32" height="32" alt="Migliacci Geoffrey">
