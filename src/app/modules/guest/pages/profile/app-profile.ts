@@ -54,8 +54,16 @@ export const PROFILE: AppProfile = {
       logo: './assets/logos/angular.svg'
     },
     {
+      name: 'VueJS',
+      logo: './assets/logos/vuejs.svg'
+    },
+    {
       name: 'Symfony',
       logo: './assets/logos/symfony.svg'
+    },
+    {
+      name: 'Laravel',
+      logo: './assets/logos/laravel.svg'
     },
     {
       name: '.NET Core',
